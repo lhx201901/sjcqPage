@@ -1,0 +1,34 @@
+@charset "utf-8"; 
+/* CSS Document */
+
+
+
+
+.center_pic_window{
+	position: fixed;
+	margin:auto; 
+	left:0; 
+	right:0; 
+	top:0;
+	bottom:0;
+	width:700px; 
+	height:700px;
+	z-index: 50;
+	background-color: white;
+	text-align:center;
+	display:none;
+}
+
+.center_pic_window >div> .ed_sel_del{
+	position: relative;
+	right:0; 
+	z-index: 50;
+	float:right;
+}
+
+.center_pic{
+	left:0; 
+	right:0; 
+	margin-top: -50px;
+	
+}

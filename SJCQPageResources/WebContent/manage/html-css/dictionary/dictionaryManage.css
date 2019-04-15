@@ -1,0 +1,23 @@
+/*部门管理页css*/
+body{
+	background-color: rgba(251, 251, 251, 0.3);
+}
+.ztreePreDiv {
+	width: 150px;
+	min-height:300px;
+	overflow: auto;
+}
+
+#search-content {
+	margin-top: 10px;
+}
+
+.search-condition-div {
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+.dic_content{
+	width:100%;
+}

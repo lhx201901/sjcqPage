@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>图片详情</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+<link rel="stylesheet" href="../../../vision/project/css/base.css"/>
+<link rel="stylesheet" href="../../../vision/project/css/picDetail.css"/>
+<!-- <link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" /> -->
+<link href="../../../plug/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- 图集信息 -->
+<div class="pic_msg_ct" id="sjcq_tj" style="display:none;">
+    <div class="w_auto">
+        <div class="vtpdl clearfix">
+            <div class="vt_maximg">
+                <div class="vt_dl_img"><img id="tjFmlj" src=""></div>
+            </div>
+            <div class="zutu_img">
+                <p class="zi_ti" id="tjMc"></p>
+                <div class="zi_tab">
+                        <p class="mt40 f16 fb">主说明</p>
+                        <p class="mt10 gray9" id="tjRemark">本网站所有图片及影视素材均由本公司或版权所有人授权发布，如果您侵犯了该图片素材或影视素材的知识产权，北京全景视觉网络科技股份有限公司有权依据著作权侵权惩罚性赔偿标准或最高达50万元人民币的法定标准要求赔偿，且有权不以本网站发布的图片授权价格作为参考标准,本网站所有图片及影视素材均由本公司或版权所有人授权发布，如果您侵犯了该图片素材或影视素材的知识产权，北京全景视觉网络科技股份有限公司有权依据著作权侵权惩罚性赔偿标准或最高达50万元人民币的法定标准要求赔偿，且有权不以本网站发布的图片授权价格作为参考标准。</p>
+                        <p class="vt_pic_sel mt20" id="tj_type"><span>图片分类：</span><a href="#">全部图片</a><u>></u><a href="#">新闻图片</a><u>></u><a href="#">风景</a></p>
+                        <p class="vt_pic_ked mt20" id="tjGjz"><span>关键词：</span><a href="#">风景</a><a href="#">歌剧院</a><a href="#">早晨</a><a href="#">企业</a><a href="#">阳光</a><a href="#">建筑</a></p>
+                </div>
+                <div class="zi_mg">
+                    <p id="tjSl"><span>图片数量：</span>2</p>
+                    <p id="tjSyz"><span>摄影作者：</span>杨晓倩</p>
+                    <p id="tjScsj"><span>上传时间：</span>2018年05月21日 13:25:00</p>
+                    <p id="tjScz"><span>上传者：</span>杨晓倩</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图片信息 -->
+<div id="sjcq_pic">
+	<div class="pic_contet">
+		<div class="w_auto">
+	    	<p class="ti" id="picMc"></p>
+	        <p class="time" id="picScsj"></p>
+	        <p class="seti" >
+	            <i class="ico ico21"></i><span id="lookNumber"></span>
+	        </p>
+	        <dl class="clearfix" id="pAndD" style="display: none;">
+	        	<dt><img id="pAndD_img"  src=""></dt>
+	            <dd>
+	            	<p class="sna" id="pAndD_realName"></p>
+	                <p class="snc"><span id="pAndD_numberOfWorks"></span><span id="pAndD_focusOnNum" class="ml10"></span></p>
+	            </dd>
+	        </dl>
+	    </div>
+	</div>
+	
+	<div class="pic_msg_ct">
+		<div class="w_auto">
+	        <div class="vtpdl clearfix">
+	            <div class="vt_maximg">
+	                <!-- ../project/images/tpxq_07.png -->
+	                <div class="vt_dl_img"><img id="picLyljm" src=""></div>
+	            </div>
+	            <div class="zutu_img">
+	                <p class="zi_ti" id="picMc_2"></p>
+	                <!-- 12 -->
+                    <p class="mt40 f16 fb">主说明</p>
+	                <p class="mt10 gray9" id="picRemark">------</p>
+	                <p class="vt_pic_sel mt20" id="pic_type"><span>图片分类：</span><a href="#">--</a><u>></u><a href="#">--</a><u>></u><a href="#">--</a></p>
+	                <p class="vt_pic_ked mt20" id="picGjz"><span>关键词：</span><a href="#">--</a></p>
+                  	<!-- 12 -->
+	                <p class="zi_fi" >分说明</p>
+	                <p class="zi_ci" id="picFRemark"></p>
+	                <div class="zi_mg">
+	                    <p id="picDd"></p>
+	                    <p id="picSyz"></p>
+	                    <p id="picSysj"></p>
+	                    <p id="picScz"></p>
+	                </div>
+	                <p class="zi_ex">图片EXIF提取数据</p>
+	                <div class="zi_tab">
+	                    <table>
+	                        <tr>
+	                            <td id="picFbl"></td>
+	                            <td id="picBgsj"></td>
+	                        </tr>
+	                        <tr>
+	                            <td id="picDX"></td>
+	                            <td id="picISO"></td>
+	                        </tr>
+	                        <tr>
+	                            <td id="picXjxh"></td>
+	                            <td id="picJj"></td>
+	                        </tr>
+	                        <tr>
+	                            <td id="picGqz"></td>
+	                            <td id="photoType"></td>
+	                        </tr>
+	                    </table>
+	                </div>
+	                <p class="mt40 f22" id="picJg"></p>
+	
+	            </div>
+	        </div>
+	     <!--   <div class="vt_smt">
+	        	<p class="mt40 f16 fb">主说明</p>
+	            <p class="mt10 gray9" id="picRemark"></p>
+	        </div> -->  
+	    </div>
+	</div>
+</div>
+<!-- 图集图片列表 -->
+<div id="tj_pic_list" class="w_auto" style="padding-left:30px;">
+    <div class="pic_sel_od" >
+        <div class="w_auto" style="font-size: 28px;">
+            图片列表
+        </div>
+    </div>
+    <div class="pic_sel_ed">
+        <div class="w_auto">
+            <div class="pic_li my_up_img">
+                <ul class="clearfix" id="tj_pic">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../../vision/project/js/jquery.min.js" ></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<!-- 顶部导航 和 部分公共方法 -->
+<!-- <script type="text/javascript" src="../../../vision/project/js/public/public.js" ></script>
+顶部标题 功能
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+获取网页url参数
+<script type="text/javascript" src="../../../vision/util/js/getUtil.js"></script>
+
+-->
+<!-- 获取网页url参数-->
+<script type="text/javascript" src="../../../vision/util/js/getUtil.js"></script>
+<!-- 图片查询 功能 -->
+<script type="text/javascript" src="../../../vision/js/in_search.js"></script>
+<!-- 图片详情页面 功能 -->
+<script type="text/javascript" src="../../html-js/photoDetail/photoDetail.js"></script>
+<!-- 收藏 关注 方法 -->
+<script type="text/javascript" src="../../../vision/js/in_browse.js"></script>
+<script type="text/javascript" src="../../../plug/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+<script type="text/javascript" >
+    photoDetail.init();
+</script>
+</body>
+</html>

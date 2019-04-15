@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>摄影活动管理</title>
+    <link rel="stylesheet" href="../../../plug/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../../plug/bootstrap/css/bootstrap-table.css" type="text/css">
+    <link rel="stylesheet" href="../../../plug/bootstrap/css/multiple-select.css" type="text/css">
+
+<link href="../../html-css/photographyActive/photographyActive.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../../themeTemplate/black/css/content-style.css" type="text/css"  id="contentStyle">
+
+ <script type="text/javascript" src="../../../plug/jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../../plug/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../html-js/photographyActive/photographyActive.js"> </script>
+</head>
+<body>
+<div id="area_content_div" class="area_content">
+<div style="margin-left: 10px;">
+	<div id = "search-content">
+		<div class="search-condition-div">
+			<label style="display: inline; position: relative;">活动名称：</label>
+			<input type="text" class="form-control report_data_table_td" id = "area_name"/>
+			<label style="display: inline; position: relative;">类型：</label>
+			<select id="activ_type">
+				<option value="0">全部</option>
+				<option value="1">召集中</option>
+				<option value="2">进行中</option>
+				<option value="3">已结束</option>
+			</select>
+<!-- 			
+			<select id="activ_isDelete">
+				<option value="">全部</option>
+				<option value="0">正常</option>
+				<option value="1">已删除</option>
+			</select>
+			 -->
+		</div>
+		<div class="search-condition-div">
+			<input type="button" value="检索"class="searchBtn  btn " onclick="searchData()"/> 
+			<input type="button" value="新增"class="addBtn btn " onclick="addAreaInfo()"/>
+			<input type="button" value="删除"class="delBtn btn btn-danger" onclick="batchDeleteByIds()"/>
+		</div>
+	</div>
+	
+	
+	<div class = "clearfix"></div>
+	<div class="actvieDataPre">
+   		<table id="activeDataTable" class="table-bordered table-hover">
+   		
+   		</table>
+	</div>
+</div>
+
+</div>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3 id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</div>
+</body>
+</html>

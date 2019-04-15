@@ -1,0 +1,55 @@
+
+.middleContent{
+	float:left;
+	width:40%;
+	margin: 0px;
+    padding: 0px;
+    background-color: white;
+   /* overflow-y: hidden; */
+	/* overflow:auto; 
+	 scrolling:yes; */
+	text-align:center;
+	margin-top:20px;
+}
+.middleContent1{
+	float:left;
+	width:59%;
+	margin: 0px;
+    padding: 0px;
+    background-color: white;
+    text-align:center;
+   /* overflow-y: hidden; */
+	/* overflow:auto; */
+	/* scrolling:no; */
+	/* overflow:auto; */
+	margin-top:20px;
+}
+
+.separateDiv{
+	float:left;
+	width: 0.5%;
+	height: 100%;
+	/* border: 1px solid red;  */
+	margin-top:20px;
+}
+.selectWidth{
+	width: 18%;
+	padding:0;
+}
+.hid{
+	/* visibility:hidden; */
+	display:none;
+}
+ul,li{
+	list-style:none;
+}
+ul,li,a{
+	font-size:14px;	
+}
+
+ul,li,span{
+	font-size:14px;	
+}
+.floatType{
+	float:left;
+}

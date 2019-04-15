@@ -1,0 +1,288 @@
+.awardItems{
+		position: relative;
+		
+		
+	}
+	.activeItem{
+		position: relative;
+		border-color: red;
+		border-width: thin;
+		border-style: solid;
+	}
+	.item{
+		margin-top: 20px;
+	}
+	.titlebs{
+		font-weight: bolder;
+		color: #FF3030;
+	}
+	.addTitlebs{
+		font-weight: bolder;
+		color: red;
+	}
+	
+	.awardsImg	.up_adimg{
+	position:relative;
+		background: url(../../img/upimg.png) no-repeat center top;
+	    padding: 70px 0 0;
+	    text-align: center;
+	    width: 200px;
+	    height: 80px;
+	    display: block;
+	    top: 30%;
+	  /* margin: -50px 0 0 -50px; */
+	    color: #999;
+	    cursor: pointer;
+	}
+	.imgLable{
+		height:145px;
+	}
+	.awardsImg{
+    background: #f8f9fa;
+    border: 1px dashed #f8b3b4;
+    color: #f24143;
+	display: inline-block;
+	}
+	.awardsItem{
+		margin-top: 10px
+	}
+	.awards_item{
+		position:relative;
+		vertical-align:top;
+		text-align:center;
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+		
+	}
+	.awards_item_add{
+		position:relative;
+		vertical-align:top;
+		text-align:center;
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+	}
+	.imgLable img{
+		position: relative;
+		top: -152px;
+	/* 	left: -70px; */
+	}
+	.add_award_item{
+		text-align:center;
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+		width:50px;
+		height:50px;
+	}
+	.awards_item i{
+		position:relative; 
+		display: block;
+		 float:right; 
+		right:5px;
+		top:-200px;
+		cursor: pointer;
+	}
+	.clearFloat{
+		clear:both;
+	}
+	
+	.auditor_img,.audit_standard_img,.date_time_arrange_img{
+		display: inline-block;
+		position:relative; 
+		 background: #f8f9fa;
+   	 	border: 1px dashed #f8b3b4;
+   		color: #f24143;
+		height:145px;
+	}
+	.auditor_content,.audit_standard_content,.date_time_arrange_content{
+		position:relative;
+    	vertical-align: top;
+		display: inline-block;
+		height:145px;
+		
+	}
+	.auditor_item,auditor_item_up,.audit_standard_item,.date_time_arrange_item{
+		vertical-align: top;
+		display: inline-block;
+		position:relative; 
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+	}
+	.adt_imgLable,.asi_imgLable{
+		height:145px
+	}
+	.adt_imgLable .up_adimg,.asi_imgLable .up_adimg{
+			position:relative;
+		background: url(../../img/upimg.png) no-repeat center top;
+	    padding: 70px 0 0;
+	    text-align: center;
+	    width: 200px;
+	    /* height: 80px;
+	     */display: block;
+	    top: 30%;
+	  /* margin: -50px 0 0 -50px; */
+	    color: #999;
+	    cursor: pointer;
+	}
+	.auditor_bt,.audit_standard_bt,.date_time_arrange_bt{
+		font-weight: bolder;
+	}
+	.btn_width{
+	 width:100%;
+	 background-color: red !important;
+ 	 color: white !important;
+ 	 background-image: linear-gradient(to bottom, red, red) !important;
+	/* 	background-color:red; */
+	}
+	.btn_group{
+		width:100%;
+		display: inline-block;
+		position:absolute;
+		vertical-align:bottom;
+		left:0px;
+		bottom:0px;
+	}
+	.auditor_item textarea,.audit_standard_item textarea,.date_time_arrange_item textarea{
+		height:80px;
+	}
+	.auditor_img img,.audit_standard_img img,.date_time_arrange_img img{
+		border-radius:50%
+	} 
+	.audit_standard_yx {
+		display: table-cell;
+		width:40px;
+		height:40px;
+		border-radius:50%;
+		color:white;
+		background-color: #1ea7e0;
+		position:relative; 
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	.date_time_arrange_yx{
+		display: table-cell;
+		width:30px;
+		height:30px;
+		border-radius:50%;
+		color:white;
+		background-color: red;
+		position:relative; 
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	
+	.auditor_item span,	.auditor_item p,.audit_standard_item span,.date_time_arrange_item span,.audit_standard_item p,.date_time_arrange_item p{
+	width:200px;
+		
+	}
+	.contentGroup .item {
+		padding:5px;
+	}
+	.contentGroup .item .award_setting_item{
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+		
+	}
+	.award_setting_content .jx{
+		font-weight: bolder;
+		text-align: center;
+	}
+	
+	.award_setting_content .jp{
+		font-weight: lighter;
+		text-align: center;
+		color: #A2A2A2;
+	}
+	.text_eitor{
+		/* border-width:1px; border-style:solid ; */
+	}
+	.btn_other{
+		 background-color: red !important;
+ 	 color: white !important;
+ 	 background-image: linear-gradient(to bottom, red, red) !important;
+		width:90% 
+	}
+	
+	.btn_space{
+		margin-left: 5px;
+	}
+	.psbz_img,.sjap_img{
+		display: inline-block;
+		position:relative; 
+		 background: #f8f9fa;
+   	 	border: 1px dashed #f8b3b4;
+   		color: #f24143;
+	}
+	.psbz_content,.sjap_content{
+		position:relative;
+    	vertical-align: top;
+		display: inline-block;
+		/* margin-top: 20px; */
+		
+	}
+	.psbz_content .audit_standard_bt,.sjap_content .date_time_arrange_bt{
+		margin-top: 50px;
+	}
+	
+	
+	.audit_standard_item_up,.date_time_arrange_item_up{
+		vertical-align: top;
+		display: inline-block;
+		position:relative; 
+		display: inline-block;
+		border-color: green;
+		border-width: thin;
+		border-style: solid;
+	}
+	.contentGroup{
+	float:left;
+		width:49%;
+		display:inline-block;
+		overflow:scroll;
+		height:800px;
+	}
+	.font_center{
+		text-align: center;
+		background-color: #E3F3FF;
+	}
+	.title_style{
+		font-weight: bolder;
+		font-size: 20px;
+		height:46px;
+	}
+	.item .title_style a{
+		color:red;
+		float:right;
+	}
+	
+	.opterHeight{
+		/* overflow:scroll; */
+	}
+	
+	.awardSetting , .audit_standard ,.date_time_arrange ,  .auditor , .text_eitor{
+		display: none;
+	}
+	.editCompent{
+		float:left;
+		/* display:inline-block; */
+		width:49%;
+		height:800px;
+	}
+	.setLeft{
+		float: right;
+	}
+	.order_item{
+	float: left;
+	width:30px;
+	}

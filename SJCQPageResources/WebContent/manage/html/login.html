@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>登录</title>
+<link href="../../plug/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link rel='stylesheet' href='../html-css/main/login.css' type='text/css'>
+<link rel="stylesheet" href="../../themeTemplate/black/css/content-style.css" type="text/css" id="contentStyle">
+
+<script type="text/javascript" src="../../plug/jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../../plug/bootstrap/js/bootstrap.js"></script>
+<script type='text/javascript' src='../../plug/json/json2.js'></script>
+<script type="text/javascript" src="../../plug/cookie/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="../html-js/login.js"></script>
+<script type="text/javascript" src="../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../plug/js/plug.js"></script>
+</head>
+<body onload="createCode();getCookie();" style="overflow: hidden;">
+	<div  style="height:768px;width:100%;" class="login_bg_style">
+	<div style=" position:relative;left:50px; top:10%; color:#317EF3; background:transparent;font-size: 31.5px">
+	 	 <!-- <img style="height: 65px;width: 498px;" src="./image/login/20180710.png"/> -->
+	 	 <a href="" class="index-alink"><img src="../img/logo.png"/></a>
+		<div class="title_div">&nbsp;视觉重庆管理平台</div> 
+	</div>
+	<div style=" position:relative; left:70%; width:282px ;top:19%">
+		<div class="loginContentDiv" style="background-color:#E1E9F3; "  >
+			<div>
+				<div style="text-align: center; background-color: #C2D4E4;height:30px;margin-top: 20px;padding-top:1px;padding-bottom:1px">
+					<span style="color:#207EC2;margin-top: 3px;font-size: 16px;line-height:29px;">欢迎登录管理系统</span>
+				</div>
+				<div class="input-prepend input-append" style="margin-top:32px; margin-left: auto; margin-right: auto; display:block; text-align: center;">
+			      <span class="add-on" style="border-top-left-radius:0px;border-bottom-left-radius:0px; margin-left: 0px;background-color: white;">
+			      <i class="icon-user self-user-icon" style="background-position-x:0px;background-position-y:0px;"></i>&nbsp;&nbsp;用户名</span>
+			      <input class="span2" id="loginName" type="text" placeholder="请输入账号"  value="请输入用户名" onfocus="this.value='' "onblur="if(this.value=='')this.value='请输入用户名'"  id="loginName" style="width:150px;color: #c2c2c2;">
+			    </div>
+			    <div class="input-prepend input-append" style="margin-left: auto; margin-right: auto; display:block; text-align: center;">
+			      <span class="add-on" style="border-top-left-radius:0px;border-bottom-left-radius:0px; margin-left: 0px;background-color: white;"><i class="icon-lock self-password-icon" style="background-position-x:0px;background-position-y:0px;"></i>&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码</span>
+			      <input class="span2"  type="password" placeholder="请输入密码" id="pwd" class="txt" 
+					value="password" onfocus="this.value=''" onblur="if(this.value=='')this.value='password'"  style="width:150px;color: #c2c2c2;">		     
+
+			    </div>
+				<div id="yzmDiv" style="display: none;width:239px;margin-left: auto; margin-right: auto;margin-top:15px ">
+					<input type="text" id="inputCode" placeholder="请输入验证码" value="请输入验证码" onfocus="this.value=''"
+						onblur="if(this.value=='')this.value='请输入验证码'"  style="margin-left:0px;color: #c2c2c2;"/> 
+						<div style="float:right;width:100px;background-color: #000000;height: 30px;text-align: center;">
+						<span id="code"title="看不清，换一张" style="margin-right:0px;display: inline-block;margin-top: 15px;font-size: 25px"></span>
+						</div>
+				</div>
+				<div id="search_pass_link" style="width: 239px;margin-top:30px">
+					 <input type="checkbox" id="rememberPwd" onclick="isChecked(this)"/>
+					<span>记住密码</span> 
+					<!-- <a href="#" style="text-decoration: underline;">忘记密码？</a>  -->
+				</div>
+					<input id="loginBtn" type="button" value="登&nbsp;录" 
+					style="width: 239px; margin-left: 20px; margin-right: auto; display: block; margin-top: -30px; height: 32px;"
+						
+						onclick="login()" class="self_btn  self-login-btn" >
+					<input type="button" onclick="getCookie()" value="得到cookie" style="display: none"> 
+					<input type="button" value="0" id="numbers" style="display: none">
+	
+			</div>
+		<div style="height: 20px"></div>
+		</div>
+		</div>
+	</div>
+	<div class="footer">@版权所有：重庆日报文化传播有限公司</div>
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+		data-backdrop="static" data-keyboard="false"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">X</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+		<div class="modal-body"></div>
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

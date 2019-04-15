@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>内部推送审核页面</title>
+<link rel="stylesheet" type="text/css" href="../../../plug/datepicker/jquery-datepicker-ui.css" />
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<!-- 错误信息 -->
+<link href="../../html-css/push/pushAudit.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script src="../../../plug/datepicker/jquery-datepicker-ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../plug/datepicker/laydate.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+</head>
+
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+
+<script src="../../html-js/push/internalPushAudit.js" type="text/javascript" charset="utf-8"></script>
+
+<body>
+	<div id="atlasAudit_content" class="atlasAudit_content">
+		<div id="search-content">
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;">推送状态：</label>
+				<select id="state" style="width: 150px;margin-bottom:5px;" class="select_width">
+							<option value="">全部</option>
+							<option value="1">待审核</option>
+							<option value="2">审核通过</option>
+							<option value="3">审核不通过</option>
+				</select>
+			</div>
+			
+			
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;">推送时间段：</label>
+								<input id="startTime" type="text" class="text time_picker_handle"
+									readonly="readonly" placeholder="开始时间">至
+								<input id="endTime" type="text" class="text time_picker_handle"
+									readonly="readonly" placeholder="结束时间">
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">检索词：</label>
+				<input type="text" class="text" placeholder="输入关键字或图片说明"  id="searchW_words">
+			</div>
+			<div class="search-condition-div">
+				<input type="button" value="检索" class="report_data_table_but btn btn-info" onclick="searchData()" />
+				<input type="button" value="批量审核" class="report_data_table_but btn btn-primary" onclick="beacthAudit()" id="batchAudit"/>
+				<input type="button" value="批量删除" class="report_data_table_but btn btn-danger" onclick="beacthDelete()" />
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="atlasAuditDataTablePre">
+			<table id="atlasAuditDataTable" class="table-bordered table-hover"></table>
+		</div>
+	</div>
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+		<div class="modal-body"></div>
+		<div class="modal-footer"></div>
+	</div>
+		
+		
+</body>
+
+</html>

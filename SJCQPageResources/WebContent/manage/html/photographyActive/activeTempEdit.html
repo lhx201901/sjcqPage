@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>图片上传</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../alert/esayAlert.css" />
+<link rel="stylesheet" href="../../html-css/photographyActive/activeTempEdit.css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<!--编辑器插件 start-->
+<script type="text/javascript" charset="utf-8" src="../../../plug/ueditor1_4_3_3-utf8/utf8-jsp/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../plug/ueditor1_4_3_3-utf8/utf8-jsp/ueditor.all.min.js"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="../../../plug/ueditor1_4_3_3-utf8/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
+<!--编辑器插件end -->
+<script src="../../html-js/photographyActive/activeTempEdit.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div class="contentGroup" >
+	<!--  -->
+<!-- 	<div class="item activeItem" data-id="1" data-type="text" data-order="1">
+		<div class="font_center title_style"><span>文本标题</span><a href="javascript:void(0)" onclick="deleteThisItem(this)" >删除</a></div>
+		<span class="titlebs">标题:</span><div class="bt">fdsa</div> <span class="titlebs">内容:</span><div class="content">gfds</div>
+	</div>
+	奖项设置
+	<div class="item" data-id="2" data-type="awardSetting" data-order="2">
+		<div class="award_setting_item">
+			<div class="award_setting_img">
+				<img style="height:210px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png" >
+			</div>
+			<div class="award_setting_content">
+				<div class="jx"><span>一等奖 (最佳摄影作品奖)</span></div>
+				<div class="jp"><span>精灵 Phamatom 4 Pro V2.0一台</span></div>
+			</div>	
+		</div>
+		<div class="award_setting_item">
+			<div class="award_setting_img">
+				<img style="height:210px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png" >
+			</div>
+			<div class="award_setting_content">
+				<div class="jx"><span>一等奖 (最佳摄影作品奖)</span></div>
+				<div class="jp"><span>精灵 Phamatom 4 Pro V2.0一台</span></div>
+			</div>	
+		</div>
+	</div>
+	评审标准
+	<div class="item" data-id="3" data-type="auditStandard" data-order="3">
+		 <div class="audit_standard_item">
+			<div class="psbz_img">
+				<div class="audit_standard_yx">
+					<span>视觉</span>
+					
+				</div>
+			</div>
+ 			<div class="psbz_content">
+				<span class="audit_standard_bt">原创创意:</span>
+				<p class="audit_standard_gz">发大发范德萨范德萨范德萨范德萨范德萨范德萨范德萨范德萨发的是大水</p>
+			</div> 
+		</div> 	
+	
+	</div>
+	大赛评委
+	<div class="item" data-id="3" data-type="auditor" data-order="3">
+	    <div class="auditor_item">
+  				<div class="auditor_img"><img style="height:200px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png"/></div>
+  				<div class="auditor_content">
+  					<span class="auditor_bt">范德萨范德萨范德萨范德萨发三</span>
+  					<p class="auditor_gz">发撒范德萨范德萨范德萨范德萨范德萨范德萨发撒</p>
+  				</div>
+   		</div>
+   		 <div class="auditor_item">
+  				<div class="auditor_img"><img style="height:200px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png"/></div>
+  				<div class="auditor_content">
+  					<span class="auditor_bt">范德萨范德萨范德萨范德萨发三</span>
+  					<p class="auditor_gz">发撒范德萨范德萨范德萨范德萨范德萨范德萨发撒</p>
+  				</div>
+   		</div>
+	</div> -->
+</div>
+<div class="editCompent">
+	<div class="btn-group"><!-- <button class="btn dropdown-toggle" data-toggle="dropdown" > 新增 <span class="caret"></span></button >   -->
+	<!--   <ul class="dropdown-menu">
+	    	<li><a href="javascript:void(0)" onclick="addText()">文本</a></li>
+	    	<li><a href="javascript:void(0)" onclick="addAwardSetting()">奖项设置</a></li>
+	    	<li><a href="javascript:void(0)" onclick="addAuditStandard()">评审标准</a></li>
+	    	<li><a href="javascript:void(0)" onclick="addAuditor()">大赛评委</a></li>
+	  </ul> -->
+	  <button class="btn" onclick="addText()" >新增文本</button> 
+	  <button class="btn" onclick="addAwardSetting()" >新增奖项设置</button> 
+	  <button class="btn" onclick="addAuditStandard()" >新增评审标准</button> 
+	  <button class="btn" onclick="addAuditor()" >新增大赛评委</button> 
+	   <button class="btn" onclick="addDateTimeArrange()" >新增时间安排</button> 
+	 </div>
+<!-- 	 <div class="btn-group zxdz">	 
+		 <button class="btn " name="appendInfo" onclick="appendInfo()">追加</button>
+		 <button class="btn"  name="editInfo"  onclick="editInfo()">修改</button>
+	 </div> -->
+	 <div class="btn-group ">	 
+		 <button class="btn" onclick="sureInfo()">确定</button>
+		 <button class="btn" onclick="sureSubmitInfo()">提交</button>
+	 </div>
+	<div class="text_eitor" >
+	    <div>
+	    	<div><span class="addTitlebs">标题</span></div>
+	   	    <div>
+	   	    	<input type="text" name="contentTitle" style="width:486px;" />
+	   	   </div>
+	   	 </div>
+	    <span class="addTitlebs">内容</span><script id="editor" type="text/plain" style="width:500px;height:200px;"></script>
+		<div>
+			<!--  <button class="btn" onclick="writeToText()">确定</button> -->
+		</div>
+	</div>
+	
+	
+	<!-- <div>
+	    <button onclick="createEditor()">
+	    创建编辑器</button>
+	    <button onclick="deleteEditor()">
+	    删除编辑器</button>
+	</div> -->
+	
+	
+	
+	
+	<!-- 奖品设置 -->
+	<div  class="awardSetting opterHeight" >
+		<div class="awardItems" style="border-width:1px; border-style:solid">
+	<!-- 		<div class="awards_item">
+				<div class="awardsImg">
+					<img style="height:210px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png" />
+				</div>
+				<div ><i>删除</i></div>
+				<div class="awardsItem clearFloat"><span>奖项:</span><input type="text" /></div>
+				<div class="awardsObject"><span>奖品:</span><input type="text" /></div>
+				<div >
+					<button class="btn btn_other">确定</button>
+					<button class="btn btn_other">删除</button>
+				</div>
+			</div>  -->
+			<div class="awards_item_add">
+				<div class="awardsImg">
+					<label class="imgLable" for="uploadFile">
+							<span class="up_adimg">图片上传</span>
+							<input accept="image/*" class="upload_file" id="uploadFile"  multiple="multiple"  hidden="hidden" type="file"/>
+					</label>
+				</div>
+	<!-- 			<div class="awardsItem"><span>奖项:</span><input type="text" /></div>
+				<div class="awardsObject"><span>奖品:</span><input type="text" /></div> -->
+	
+			</div>
+		</div>
+		
+		<div class="btn-group">
+		<!--  	<button class="btn" onclick="sureAwardSettingItems()" >确定</button> -->
+		</div>
+	</div>
+	
+	<!-- 评审标准 -->
+	<div class="audit_standard opterHeight">
+		<div class="audit_standard_items">
+	<!--  		<div class="audit_standard_item">
+				<div class="audit_standard_img">
+					<div class="audit_standard_yx">
+						<span>视觉</span><img style="height:200px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png"/>
+						
+					</div>
+				</div>
+				<div class="audit_standard_content">
+					<span class="audit_standard_bt">原创创意:</span>
+					<p class="audit_standard_gz">发大发范德萨发的是大水</p>
+					<div class="btn_group"><button class="btn btn_width">修改</button><button class="btn btn_width">删除</button></div>
+				</div>
+			</div>  -->
+	<!-- 		<div class="audit_standard_item">
+				<div class="audit_standard_img">
+					<input  type="text" style="width:30px"/>
+				</div>
+	 			<div class="audit_standard_content">
+					<div>
+						<span>标题:</span>
+						<input class="audit_standard_bt" type="text"/>
+					</div>
+						<span>说明:</span>
+						<textarea></textarea>
+						<div class="btn_group">
+							<button class="btn btn_width">确定</button>
+							<button class="btn btn_width">删除</button>
+						</div>
+				</div> 
+			</div>		 -->
+			<div class="audit_standard_item_up">
+				<div class="audit_standard_img">
+					<label  class="asi_imgLable" >
+							<span class="up_adimg">添加评审标准</span>
+							
+					</label>
+				</div>
+	<!--  			<div class="audit_standard_content">
+					<div>
+						<span>标题:</span>
+						<input class="audit_standard_bt" type="text"/>
+					</div>
+						<span>说明:</span>
+						<textarea></textarea>
+						<div class="btn_group"><button class="btn btn_width">确定</button></div>
+				</div>  -->
+			</div>		
+		</div>
+		<div><!-- <button class="btn " onclick="sureAuditStandardItems()">确定</button> --></div>
+			
+	</div>
+	
+	
+	<!-- 大赛评委-->
+	<div class="auditor opterHeight">
+		<div class="auditor_items">
+	<!--  		<div class="auditor_item">
+				<div class="auditor_img"><img style="height:200px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png"/></div>
+				<div class="auditor_content">
+					<span class="auditor_bt">原创创意:</span>
+					<p class="auditor_gz">发大发大水</p>
+					<div class="btn_group"><button class="btn btn_width">删除</button></div>
+				</div>
+			</div>  -->
+			<div class="auditor_item_up">
+				<div class="auditor_img">
+					<label  class="adt_imgLable"  for="adt_uploadFile">
+							<span class="up_adimg">添加大赛评委</span>
+							<input accept="image/*" class="adt_uploadFile" id="adt_uploadFile"  multiple="multiple"  hidden="hidden" type="file"/>
+					</label>
+				</div>
+	<!-- 			<div class="audit_standard_content">
+					<div>
+						<span>标题:</span>
+						<input class="audit_standard_bt" type="text"/>
+					</div>
+						<span>说明:</span>
+						<textarea></textarea>
+				</div> -->
+			</div>		
+		</div>
+	
+			<div><!-- <button class="btn " onclick="sureAuditorItems()">确定</button> --></div>	
+	</div>
+	
+	
+		<!-- 添加时间安排 -->
+	<div class="date_time_arrange opterHeight">
+		<div class="date_time_arrange_items">
+	<!--  		<div class="audit_standard_item">
+				<div class="audit_standard_img">
+					<div class="audit_standard_yx">
+						<span>视觉</span><img style="height:200px" src="C:\Users\George\Desktop\临时文件夹\活动相关\门户活动视觉设计稿0129\代理销售协议.png"/>
+						
+					</div>
+				</div>
+				<div class="audit_standard_content">
+					<span class="audit_standard_bt">原创创意:</span>
+					<p class="audit_standard_gz">发大发范德萨发的是大水</p>
+					<div class="btn_group"><button class="btn btn_width">修改</button><button class="btn btn_width">删除</button></div>
+				</div>
+			</div>  -->
+	<!-- 		<div class="audit_standard_item">
+				<div class="audit_standard_img">
+					<input  type="text" style="width:30px"/>
+				</div>
+	 			<div class="audit_standard_content">
+					<div>
+						<span>标题:</span>
+						<input class="audit_standard_bt" type="text"/>
+					</div>
+						<span>说明:</span>
+						<textarea></textarea>
+						<div class="btn_group">
+							<button class="btn btn_width">确定</button>
+							<button class="btn btn_width">删除</button>
+						</div>
+				</div> 
+			</div>		 -->
+			<div class="date_time_arrange_item_up">
+				<div class="date_time_arrange_img">
+					<label  class="asi_imgLable" >
+							<span class="up_adimg">添加时间安排</span>
+							
+					</label>
+				</div>
+	<!--  			<div class="audit_standard_content">
+					<div>
+						<span>标题:</span>
+						<input class="audit_standard_bt" type="text"/>
+					</div>
+						<span>说明:</span>
+						<textarea></textarea>
+						<div class="btn_group"><button class="btn btn_width">确定</button></div>
+				</div>  -->
+			</div>		
+		</div>
+		<div><!-- <button class="btn " onclick="sureAuditStandardItems()">确定</button> --></div>
+			
+	</div>
+	
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.thumbnails li {
+  margin: 0px;
+  margin-left: 100px;
+  margin-top: 60px;
+  width: auto;
+}
+.thumbnails li a {
+  border: 0px;
+  padding: 0px;
+}
+.thumbnail-notboxshow {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055) !important;
+}
+.thumbnails li a p {
+  display: block !important;
+}
+/*# sourceMappingURL=first-style.css.map */

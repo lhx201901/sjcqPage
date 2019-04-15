@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Jcrop 图像裁剪 &raquo; 按高宽比例预览裁剪效果 &raquo; 在线演示 - 前端开发仓库</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="jquery.Jcrop.css">
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrap">
+  <div class="main">
+    <div class="inwrap">
+      <h1>轮播封面图像裁剪</h1><!-- jQuery Jcrop  -->
+      <h2>按高宽比例(16:9)预览裁剪效果</h2>
+		<div class="detail" id="addFile">
+			<input id="pic" class="pic-file" accept="image/*" type="file">
+			<span class="btn">选择图片</span>
+			(<span>备注：图片选择后按照右侧显示框的预览效果上传封面！</span>)
+		</div>
+      <div class="example">
+	        <img style='width:800px;' src="" id="target" alt="[Jcrop Example]">
+      </div>
+      <div id="preview-pane">
+        <div class="preview-container">
+          <img id="picPath1"  src=""  class="jcrop-preview" alt="Preview"><!-- class="jcrop-preview" -->
+        </div>
+      </div>
+      <h2>轮播信息</h2>
+		<div  >
+			<table id="person_info_table" style="width: 100%; margin-top: 20px;" >
+				<tr>
+					<td class="td-left" style="width:80px;">图片作者：</td>
+					<td class="td-right" >
+						<input type="text"  id="picAuthor" maxlength="30" style="width:100%;" placeholder="请输入图片作者，不输入默认为图片上传者">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left" style="width:110px;">图片标题：</td>
+					<td class="td-right" >
+						<input type="text"  id="picName" maxlength="30" style="width:100%;" placeholder="（30字以内）">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left" style="width:110px;">图片内容：</td>
+					<td class="td-right" >
+						<textarea id="picContent" maxlength="2000"  style="width:100%; height:160px;" placeholder="（2000字以内）"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">是否启用：</td>
+					<td class="td-right">
+						<input type="radio" name="isUsed" value="1" checked="checked">启用
+						<input type="radio" name="isUsed" value="0"/>停用
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="text-align:center;margin-top:30px;">
+				<input type="button" value="保存" class="report_data_table_but btn btn-primary" onclick="save()" style="width:130px;height: 40px;">
+		</div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+
+		<div class="modal-body"></div>
+
+		<div class="modal-footer"></div>
+	</div>
+<script src="higlight.pack.js"></script>
+<script src="demo.js"></script>
+<script src="jquery.min.1.5.2.js"></script>
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script src="jquery.Jcrop.min.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../../layer/layer.js"></script>
+<script>
+var PARAM={}; //前一个页面传递的参数对象
+var MAIN_PAGE_WINDOW = {};//前一个页面对象
+var BROADID_ = "";//序号
+var IFRAMEID_="";//当前iframid
+var BROAD={};
+var jcrop_api,FILE,type,ytLj,picXh,dataId,
+ boundx,
+ boundy,
+ // Grab some information about the preview pane
+ $preview = $('#preview-pane'),
+ $pcnt = $('#preview-pane .preview-container'),
+ $pimg = $('#preview-pane .preview-container img'),
+ xsize = $pcnt.width(),
+ ysize = $pcnt.height();
+ //jQuery(function($){
+$(document).ready(function(){
+	 checksessoin();
+	PARAM= GetParamByRequest();
+	IFRAMEID_="tab_seed_"+PARAM.tabId;
+	BROADID_ = PARAM.broadId;
+	MAIN_PAGE_WINDOW = parent.document.getElementById("tab_frame_"+PARAM.MAIN_PAGE_ID_).contentWindow;
+	type = PARAM.type;
+	if(type=="addFile"){
+		 $("#addFile").show();
+	}else if(type=="updateFile"){
+		$("#addFile").show();
+		dataId = PARAM.dataId;
+		findInfoById(dataId);
+	}else{
+		 $("#addFile").hide();
+		 //添加链接
+		 ytLj = PARAM.ytLj;
+		 picXh=PARAM.picXh;
+		 var $img = $("#target");
+		 $img.attr('src', PICURI+ytLj);
+		 $pimg.attr('src', PICURI+ytLj);
+		 initJcrop();
+	}
+}); 
+ $(".pic-file").change(function() {
+		var $file = $(this);
+		var fileObj = $file[0];
+		FILE=fileObj.files[0];
+		var reader = new FileReader;
+		reader.onload = function (evt) {
+      var image = new Image();
+      image.onload = function () {
+          var width = this.width;
+          var height = this.height;
+          /*if(width*9-height*16>=20||width*9-height*16<=-20){
+          	   alert("宽:"+width+"高:"+height+"比例不等于16/9请重新上传!");
+          	return false;
+          }*/
+  		var windowURL = window.URL || window.webkitURL;
+  		if (fileObj && fileObj.files && fileObj.files[0]) {
+	     		var dataURL;
+	     		$(".example").html("");
+	     		$(".example").html("<img  src='' id='target' alt='[Jcrop Example]'/>");
+	     		var $img = $("#target");
+  			dataURL = windowURL.createObjectURL(fileObj.files[0]);
+  			console.log($img);
+  			$img.attr('src', dataURL);
+  			$pimg.attr('src', dataURL);
+  			initJcrop();
+  		}
+      };
+      image.src = evt.target.result;
+  };
+  reader.readAsDataURL(FILE);
+	});
+
+//进入左边原图选择框
+function initJcrop(){
+xsize = $pcnt.width(),
+ysize = $pcnt.height();
+console.log('init',[xsize,ysize]);
+$('#target').Jcrop({
+ onChange: updatePreview,
+ onSelect: updatePreview,
+ aspectRatio: xsize / ysize
+},function(){
+ // Use the API to get the real image size
+ var bounds = this.getBounds();
+ boundx = bounds[0];
+ boundy = bounds[1];
+ // Store the API in the jcrop_api variable
+ jcrop_api = this;
+// console.log(boundy+"=="+boundx);
+ // Move the preview into the jcrop container for css positioning
+ $preview.appendTo(jcrop_api.ui.holder);
+});
+}
+function updatePreview(c){
+ if (parseInt(c.w) > 0) {
+	      var rx = xsize / c.w;
+	      var ry = ysize / c.h;
+	      $pimg.css({
+	        width: Math.round(rx * boundx) + 'px',
+	        height: Math.round(ry * boundy) + 'px',
+	        marginLeft: '-' + Math.round(rx * c.x) + 'px',
+	        marginTop: '-' + Math.round(ry * c.y) + 'px'
+	      });
+	    BROAD.x=c.x+"";
+	    BROAD.yzb=c.y+"";
+	    BROAD.x2zb=c.x2+"";
+	    BROAD.y2zb=c.y2+"";
+	    BROAD.width=c.w+"";
+	    BROAD.height=c.h+"";
+ }
+ console.log(c);
+ /* console.log(c);h: 189
+ w: 336
+ x: 200
+ x2: 536
+ y: 223
+ y2: 412 */
+};
+ function init(){
+	  
+	  
+ }
+
+</script>
+
+<div style="display:none;">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cdiv id='cnzz_stat_icon_5076009' style='display:none;'%3E%3C/div%3E%3Cscript src='" + cnzz_protocol + "s25.cnzz.com/stat.php%3Fid%3D5076009' type='text/javascript'%3E%3C/script%3E"));</script>
+</div> </body>
+</html>

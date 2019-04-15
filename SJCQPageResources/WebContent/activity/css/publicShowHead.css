@@ -1,0 +1,59 @@
+.sale_box {
+	width: 880px;
+	position: fixed;
+	top: 46%;
+	left: 38%;
+	margin: -250px 0 0 -250px;
+	z-index: 30;
+	background: #fff;
+	overflow: hidden;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.sale_box .close {
+	position: absolute;
+	top: 15px;
+	right: 15px
+}
+
+.sale_box .ui_tit {
+	background: #eff0f1;
+	padding: 15px;
+	font-size: 16px
+}
+.register_box {
+	width: 500px;
+	position: fixed;
+	top: 46%;
+	left: 50%;
+	margin: -250px 0 0 -250px;
+	z-index: 30;
+	background: #fff;
+	overflow: hidden;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.register_box .close {
+	position: absolute;
+	top: 15px;
+	right: 15px
+}
+
+.register_box .ui_tit {
+	background: #eff0f1;
+	padding: 15px;
+	font-size: 16px
+}
+.pp20{
+	padding-left: 32%;
+	padding-top: 20px;
+}
+
+
+
+
+

@@ -1,0 +1,304 @@
+<!doctype html>
+<!-- 
+
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 2.3.1
+
+Version: 1.3
+
+Author: KeenThemes
+
+Website: http://www.keenthemes.com/preview/?theme=metronic
+
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
+
+-->
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="keywords" content="输入你的关键字">
+	<meta name="description" content="输入你的描述">
+	<meta name="viewport" id="viewport"
+		  content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="applicable-device" content="mobile">
+	<meta name="format-detection" content="telephone=no">
+<!--	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="114x114"  href="/apple-touch-icon-retina.png">-->
+	<title>主界面</title>
+
+	<link href="../../plug/bootstrap/css/bootstrap.min.css" rel="stylesheet"  type="text/css" /> 
+	<!-- <link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet"  type="text/css" /> -->
+	
+	<link href="../html-css/main/font-awesome.min.css" rel="stylesheet"  type="text/css" />
+	<link href="../html-css/main/style.css" rel="stylesheet" type="text/css" />
+	<link href="../html-css/main/style-responsive.css" rel="stylesheet"  type="text/css" />
+	<link href="../../themeTemplate/black/css/self-defining-default.css" rel="stylesheet" type="text/css"  id="style_color" />
+	<link rel="shortcut icon" href="../../image/main/image/favicon.ico" />
+	<link rel="stylesheet" href="../../themeTemplate/black/css/content-style.css" type="text/css"  id="contentStyle">
+</head>
+<body class="page-header-fixed page-footer-fixed" >
+<!-- 头部 开始-->
+<div class="header navbar navbar-inverse navbar-fixed-top">
+	<!-- 顶部 logo 信息 等 显示 开始  -->
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<!-- logo 图片 及 链接 -->
+			<a class="brand" href="#">
+				<!-- <img src="../../../image/main/image/unitLogo.png"  /> -->
+			</a>
+			<!-- 隐藏的收缩菜单 按钮 -->
+			<a href="javascript:" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+				<img  src="../../image/main/image/menu-toggler.png" alt="" />
+			</a>
+
+
+			<!-- 右上角消息等显示   开始-->
+			<ul class="nav pull-right">
+				<!-- <li class="dropdown" id="header_inbox_bar">
+					<a class="dropdown-toggle"  onclick="uploadYWLLQ()" >
+						<i class="icon-download"></i>
+						<span class="badge">下载原文浏览器</span>
+					</a>
+				</li> -->
+<!-- 				<li class="dropdown" id="smsInfo">
+					<a class="dropdown-toggle"  href="#" >
+						<i class="icon-envelope"></i>
+						<span class="badge" >0</span>
+					</a>
+				</li> -->
+				<!-- <li class="dropdown" id="header_task_bar">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-tasks"></i>
+						<span class="badge" id="badge"></span>
+					</a>
+					<ul class="dropdown-menu extended tasks" id="taskList">
+
+					</ul>
+				</li> -->
+               
+               <!-- &lt;!&ndash; 第三个图标 进度 结束 &ndash;&gt;-->
+				<!-- 登录者相关信息 开始 -->
+				<li class="dropdown user">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<!-- 	<img alt="" src="../../image/main/image/avatar1_small.jpg" /> -->
+						<span class="username" id="login_name"></span>
+						<input type="hidden" id ="sessionNo">
+						<i class="icon-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a onclick="searchDepInfo()" title=""><i class="icon-user"></i>&nbsp;个人信息</a></li>
+						<li><a onclick="editDepInfo()" title=""><i class="icon-user"></i>&nbsp;编辑信息</a></li>
+						<li><a onclick="changePassword()" title=""><i class="icon-calendar"></i>&nbsp;密码管理</a></li>
+						<li class="divider"></li>
+						<li><a href="javascript:" onclick="exit();"><i class="icon-key"></i>&nbsp;登出</a></li>
+					</ul>
+				</li>
+				<!-- 登陆者相关信息 结束 -->
+			</ul>
+			<!-- 右上角消息等显示   结束-->
+		</div>
+	</div>
+	<!-- 顶部 logo 信息 等 显示 结束  -->
+</div>
+<!-- 头部 结束-->
+
+<!-- 中部 容器 开始-->
+<div class="page-container">
+	<!-- 左侧边栏 开始 -->
+		<div class="page-sidebar nav-collapse collapse">
+		<!-- 左侧边栏菜单 开始 -->
+		<ul id="menu" class="page-sidebar-menu" >
+			<!-- 菜单收缩 按钮 开始 -->
+			<li>
+				<div class="sidebar-toggler hidden-phone noaddstartactive"></div>
+			</li>
+			<!-- 菜单收缩 按钮 结束-->
+
+			<!-- 搜索框 开始 -->
+			<!--<li class="noaddstartactive">
+                <form class="sidebar-search">
+                    <div class="input-box" style="height: 12px">
+
+                    </div>
+                </form>
+            </li>-->
+			<!-- 搜索框 结束 -->
+			<!-- 菜单 开始 -->
+			<!--第一个功能模块默认选中 一级-->
+			<li class="start active ">
+				<a href="javascript:" onclick="loadHomePage('../html/frist.html',this)">
+					<i class="icon-home"></i>
+					<span class="title">首页</span>
+					<span class="selected"></span>
+				</a>
+			</li>
+		</ul>
+		<!-- 左侧边栏菜单 结束 -->
+	</div>
+	<!-- 左侧边栏 结束 -->
+
+	<!-- 右侧页面  正文 开始 -->
+	<div class="page-content content-bgstyle">
+		<!-- 弹出类 模式表单  隐藏的  开始-->
+		<div id="portlet-config" class="modal hide">
+			<div class="modal-header">
+				<button data-dismiss="modal" class="close" type="button"></button>
+				<h3>标题</h3>
+			</div>
+			<div class="modal-body">内容............</div>
+		</div>
+		<!-- 弹出类 模式表单  隐藏的  结束-->
+
+		<!-- 页面 容器  开始-->
+		<div class="container-fluid" style="padding-left: 15px !important;padding-right: 0px !important;">
+			<!-- 容器 头 开始  包含 设置 及导航-->
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 常规设置  颜色等 开始 -->
+					<div class="color-panel hidden-phone">
+						<div class="color-mode-icons icon-color"></div>
+						<div class="color-mode-icons icon-color-close"></div>
+						<div class="color-mode">
+							<p>颜色选择</p>
+							<ul class="inline">
+								<li class="color-black current color-default" data-style="black"></li>
+								<li class="color-blue  " data-style="blue"></li>
+								<!-- <li class="color-brown" data-style="brown"></li>
+                                <li class="color-purple" data-style="purple"></li>
+                                <li class="color-grey" data-style="grey"></li> -->
+								<li class="color-white color-light" data-style="white"></li>
+							</ul>
+							<label>
+								<span>布局</span>
+								<select class="layout-option m-wrap small">
+									<option value="fluid" selected>平铺(流体)</option>
+									<option value="boxed">居中(盒装)</option>
+								</select>
+							</label>
+							<label>
+								<span>头部</span>
+								<select class="header-option m-wrap small">
+									<option value="fixed" selected>固定的</option>
+									<option value="default">移动的(违约的)</option>
+								</select>
+							</label>
+							<label>
+								<span>侧边栏(左侧模块栏)</span>
+								<select class="sidebar-option m-wrap small">
+									<option value="fixed">固定的</option>
+									<option value="default" selected>移动的(违约的)</option>
+								</select>
+							</label>
+							<label>
+								<span>底部</span>
+								<select class="footer-option m-wrap small">
+									<option value="fixed">固定的</option>
+									<option value="default" >移动的(违约的)</option>
+								</select>
+							</label>
+						</div>
+					</div>
+					<!-- 常规设置  颜色等 结束 -->
+					<!--						<ul class="breadcrumb" style="display:none;">
+                                            </ul>-->
+					<!-- 此处是相关代码 -->
+					<ul class="nav nav-tabs" role="tablist" id="tabMenue" style="margin-top: 12px;margin-bottom: 0px;">
+					</ul>
+					<div class="tab-content" style="width:100%;" id="tabContent">
+
+					</div>
+					<!-- 相关代码结束 -->
+				</div>
+				<!-- 页面标题和面包屑  结束-->
+
+			</div>
+			<!--  容器 头  结束-->
+
+			<!--容器内容 开始-->
+		</div>
+		<!--容器内容 结束-->
+	</div>
+	<!-- 页面 容器  结束-->
+</div>
+<!-- 右侧页面  正文 结束 -->
+
+<!-- 中部 容器 结束 -->
+
+<!--底部 开始-->
+<div class="footer go-top">
+	<div class="footer-inner"></div>
+	<div class="footer-tools">
+			<span class="go-top">
+				 点击返回顶部&nbsp;<i class="icon-angle-up"></i>
+			</span>
+	</div>
+</div>
+<!-- 底部结束 -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+<script src="../../plug/jquery/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="../../plug/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src = "../../plug/js/json2.js"  type="text/javascript" ></script>
+<script src = "../../plug/js/plug.js"  type="text/javascript"></script>
+<script type="text/javascript" src="../../plug/json/json2.js"></script>
+<script src="../../plug/cookie/jquery.cookie.min.js" type="text/javascript"></script>
+<script src="../html-js/main/app.js" type="text/javascript"></script>
+<script src="../html-js/main/main.js" type="text/javascript"></script>
+<script src="../../plug/bootstrap-closable-tab/bootstrap-closable-tab.js"></script>
+
+<script>
+    jQuery(document).ready(function() {
+        App.init();
+    });
+</script>
+
+<!-- END JAVASCRIPTS -->
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push([ '_setAccount', 'UA-37564768-1' ]);
+    _gaq.push([ '_setDomainName', 'keenthemes.com' ]);
+    _gaq.push([ '_setAllowLinker', true ]);
+    _gaq.push([ '_trackPageview' ]);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://'
+            : 'http://')
+            + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3 id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</div>
+
+</body>
+
+<!-- END BODY -->
+
+</html>

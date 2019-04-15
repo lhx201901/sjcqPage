@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>视觉重庆</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- 页面样式 首页-->
+<link rel="stylesheet" href="../project/css/base.css" />
+<link rel="stylesheet" href="../../public-plug/slick/css/slick.css" />
+<link rel="stylesheet" href="../project/css/style_index.css" />
+<link rel="stylesheet" type="text/css"
+	href="../project/css/banner/banner.css" />
+<script type="text/javascript" src="../js/windowlevel.js"></script>
+</head>
+<body onload="load()">
+	<div class="w_auto imgHeight" style="z-index: 11;">
+		<div class="slick showImgMsg"></div>
+		<div class="in_search serch_center">
+			<!-- <div style="height: 95px; width: 858px; border: 1px #f00 solid;" class="showMsg"> -->
+			<div class="w_auto">
+				<div class="search_box">
+					<input class="text" type="text" placeholder="输入关键词搜索照片"
+						id="inp_search"">
+					<div class="sel_cls">
+						<span>全部图片</span><i class="ico ico2"></i>
+						<ul>
+							<li><a href="javascript:void(0)">全部图片</a></li>
+							<li><a href="javascript:void(0)">新闻图片</a></li>
+							<li><a href="javascript:void(0)">图片故事</a></li>
+							<li><a href="javascript:void(0)">重要图片</a></li>
+							<li><a href="javascript:void(0)">艺术图片</a></li>
+							<li><a href="javascript:void(0)">历史图片</a></li>
+							<!--  <li><a href="javascript:void(0)">新华图片</a></li> -->
+							<li><a href="javascript:void(0)">机构图片</a></li>
+						</ul>
+					</div>
+					<button class="sel_btn" onclick="index_nav.search()">
+						<i class="ico ico3 mr5"></i>搜索
+					</button>
+				</div>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+	<div style="position: absolute; top: 0px; z-index: 999; width: 100%; left: 0;right:0;margin:auto;">
+		<div class="head">
+
+			<div class="w_auto clearfix h_outBox">
+				<div class="top_box">
+					<a href="index.html" class="top_logo"><img
+						src="../project/images/logo.svg"></a>
+					<div class="h_top_nav">
+						<ul class="h_topUl">
+							<li class="cur" data-id="sy_dh"><a href="index.html"
+								class="h_dh">首页</a></li>
+							<li data-id="xwtp_dh">
+								<div class="dropdown">
+									<a href="newsPhoto.html" class="h_dh">新闻图片</a>
+									<div class="dropdown-content" id="newsSecondType"></div>
+								</div>
+							</li>
+							<li data-id="tk_dh">
+								<!--   <a href="imgLibrary.html" class="h_dh">图库</a> -->
+								<div class="dropdown">
+									<a href="imgLibrary.html" class="h_dh">图库</a>
+									<div class="dropdown-content">
+										<a href="imgLibrary.html">区县图片</a> <a
+											href="javascript:index_nav.searchType('老照片','')">老照片</a> <a
+											href="javascript:index_nav.searchType('企业图片','')">企业图片</a> <a
+											href="javascript:index_nav.searchType('创意图片','')">创意图片</a> <a
+											href="javascript:index_nav.searchType('重要图片','')">重要图片</a> <a
+											href="javascript:index_nav.searchType('图片故事','')">图片故事</a>
+									</div>
+								</div>
+							</li>
+							<li data-id="syhd_dh"><a href="activities.html" class="h_dh">摄影活动</a>
+							</li>
+							<li data-id="sys_dh"><a href="photographer.html"
+								class="h_dh">摄影师</a></li>
+							<li id="grapher_type" data-id="sjs_dh"><a
+								href="photographer.html?photographer=photographer" class="h_dh">设计师</a>
+							</li>
+							<li data-id="zzfw_dh">
+								<!-- <a href="increment.html" class="h_dh">增值服务</a> --> <a
+								href="#" onclick="index_nav.alertCreating()" class="h_dh">增值服务</a>
+							</li>
+							<li data-id="sp_dh"><a href="#"
+								onclick="index_nav.alertCreating()" class="h_dh">视频</a></li>
+						</ul>
+						<div class="h_excess">
+							<p class="h_point">···</p>
+							<ul class="h_eol">
+								<li data-id="sy_dh_sl" style="display: none;"><a
+									href="index.html" class="h_dh">首页</a></li>
+								<li data-id="xwtp_dh_sl" style="display: none;">
+									<div class="dropdown">
+										<a href="newsPhoto.html" class="h_dh">新闻图片</a>
+										<div class="dropdown-content" id="newsSecondType"></div>
+									</div>
+								</li>
+								<li data-id="tk_dh_sl" style="display: none;">
+									<div class="dropdown">
+										<a href="imgLibrary.html" class="h_dh">图库</a>
+										<div class="dropdown-content">
+											<a href="imgLibrary.html">区县图片</a> <a
+												href="javascript:index_nav.searchType('老照片','')">老照片</a> <a
+												href="javascript:index_nav.searchType('企业图片','')">企业图片</a> <a
+												href="javascript:index_nav.searchType('创意图片','')">创意图片</a> <a
+												href="javascript:index_nav.searchType('重要图片','')">重要图片</a> <a
+												href="javascript:index_nav.searchType('图片故事','')">图片故事</a>
+										</div>
+									</div>
+								</li>
+								<li data-id="syhd_dh_sl" style="display: none;"><a
+									href="activities.html" class="h_dh">摄影活动</a></li>
+								<li data-id="sys_dh_sl" style="display: none;"><a
+									href="photographer.html" class="h_dh">摄影师</a></li>
+								<li id="grapher_type" data-id="sjs_dh_sl" style="display: none;">
+									<a href="photographer.html?photographer=photographer"
+									class="h_dh">设计师</a>
+								</li>
+								<li data-id="zzfw_dh_sl" style="display: none;">
+									<!-- <a href="increment.html" class="h_dh">增值服务</a> --> <a
+									href="#" class="h_dh">增值服务</a>
+								</li>
+								<li data-id="sp_dh_sl" style="display: none;"><a href="#"
+									class="h_dh">视频</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="user_qt_ed">
+					<div class="user_info_n" id="account_no" style="display: none;">
+						<a href="#" class="h_gwc"><i class="ico ico1"></i><em>0</em></a> <a
+							id="account" href="javascript:void(0)"
+							onclick="index_nav.open('../login.html')" class="h_login">登陆
+						</a> <u>|</u> <a href="javascript:void(0)"
+							onclick="index_nav.open('../register.html')" class="h_sing">注册</a>
+						<u>|</u>
+							<a href="#" onclick="isUpImg()" class="h_upload">上传照片</a>
+						<!-- 	<u>|</u> <a href="javascript:void(0)" onclick="isUpImg()">上传照片</a> -->
+						<!-- <a href="javascript:void(0)" onclick="index_nav.dowPic(13213)" class="h_sing">下载</a> -->
+					</div>
+					<div class="user_info_n" id="account_yes" style="display: none;">
+						<a href="javascript:void(0)" class="h_gwc"
+							onclick="index_nav.car_jump()"> <i class="ico ico1"></i><em
+							id="yes_num">0</em>
+						</a>
+						 <span class="u_info_img" onclick="index_nav.user_jump()">
+							<img width="26px" height="26px" id="yes_img" src="">
+						</span>
+						 <span class="u_info_name" id="yes_name"
+							onclick="index_nav.user_jump()"> --
+						 </span>
+						<div class="most_ed_mg">
+							<ul>
+								<li><a href="javascript:void(0)"
+									onclick="index_nav.user_jump()">个人信息</a></li>
+								<!-- <li><a href="#">我的购买</a></li>
+                        <li><a href="#">账号管理</a></li> -->
+								<li><a href="javascript:void(0)"
+									onclick="index_nav.loginOut()">退出登录</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+<!-- 
+				<div id="upImg">
+					<a href="#" onclick="isUpImg()" style="color: black;">上传照片</a>
+				</div> -->
+			</div>
+		</div>
+		<!-- 搜索 -->
+<!-- 		<div class="in_search"  style="ma">
+			<div style="height: 95px; width: 858px; border: 1px #f00 solid;" class="showMsg">
+			<div class="w_auto">
+				<div class="search_box">
+					<input class="text" type="text" placeholder="输入关键词搜索照片"
+						id="inp_search"">
+					<div class="sel_cls">
+						<span>全部图片</span><i class="ico ico2"></i>
+						<ul>
+							<li><a href="javascript:void(0)">全部图片</a></li>
+							<li><a href="javascript:void(0)">新闻图片</a></li>
+							<li><a href="javascript:void(0)">图片故事</a></li>
+							<li><a href="javascript:void(0)">重要图片</a></li>
+							<li><a href="javascript:void(0)">艺术图片</a></li>
+							<li><a href="javascript:void(0)">历史图片</a></li>
+							 <li><a href="javascript:void(0)">新华图片</a></li>
+							<li><a href="javascript:void(0)">机构图片</a></li>
+						</ul>
+					</div>
+					<button class="sel_btn" onclick="index_nav.search()">
+						<i class="ico ico3 mr5"></i>搜索
+					</button>
+				</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<!-- 搜索 -->
+	<!-- 轮播 -->
+	<!-- <div class="top_banner" >
+    <ul class="banBox" id="index_top">
+
+    </ul>
+    <a href="javascript:void(0);" class="prev ban_arrow"><i class="ico ico4"></i></a>
+    <a href="javascript:void(0);" class="next ban_arrow"><i class="ico ico5"></i></a>
+</div> -->
+
+	<div class="ed_jx_tit">
+		<p class="tit">
+			<span>影像活动</span>
+		</p>
+		<p
+			style="font-size: 28px; line-height: 30px; font-weight: 900; color: #f0f0f0;">ACTIVITY</p>
+	</div>
+	<!-- 轮播 -->
+	<div class="in_aksel">
+		<div class="w_auto">
+			<div class="yx_lt">
+				<i class="ico ico16"></i>
+			</div>
+			<div class="yx_rt">
+				<i class="ico ico17"></i>
+			</div>
+			 <input type="hidden" id="mypage" value="1"/>
+             <input type="hidden" id="allPage" value=""/>
+			<ul class="clearfix" id="activities">
+				<!-- 
+        	<li>
+            	<div class="in_ak_li">
+                    <p class="img"><a href="newsPhoto.html"><img src="../project/images/in_05.png"></a></p>
+                    <p class="tit"><a href="newsPhoto.html">新闻图片</a></p>
+                    <p class="con">News pictures</p>
+                </div>
+            </li>
+            <li>
+            	<div class="in_ak_li">
+                    <p class="img"><a href="#"><img src="../project/images/in_07.png"></a></p>
+                    <p class="tit"><a href="#">创意视频</a></p>
+                    <p class="con">Creative video</p>
+                </div>
+            </li>
+            <li>
+            	<div class="in_ak_li">
+                    <p class="img"><a href="#"><img src="../project/images/in_09.png"></a></p>
+                    <p class="tit"><a href="#">手机美图</a></p>
+                    <p class="con">phone pictures</p>
+                </div>
+            </li>
+            <li>
+                <div class="in_ak_li">
+                    <p class="img"><a onclick="index_nav.provide()"><img src="../project/images/in_11.png"></a></p>
+                    <p class="tit"><a onclick="index_nav.provide()">我要供稿</a></p>
+                    <p class="con">feeds</p>
+                </div>
+            </li>
+             -->
+			</ul>
+		</div>
+	</div>
+
+	<div class="ed_jximg ed_jximg2">
+		<div class="ed_jx_tit">
+			<p class="tit">
+				<span>重庆区县</span>
+			</p>
+			<p
+				style="font-size: 28px; line-height: 30px; font-weight: 900; color: #f0f0f0;">COUNTY</p>
+		</div>
+		<!-- 图片展示 -->
+		<div class="county_div">
+			<ul class="clearfix county_ul">
+				<li onclick="index_nav.search_a('','','万州区')"><img
+					class="clearfix" width="100"
+					onmouseleave="this.src='../project/countyImg/wanzhou01.png'"
+					onmouseenter="this.src='../project/countyImg/wanzhou.png'"
+					src="../project/countyImg/wanzhou01.png" />
+					<p>万州</p></li>
+				<li onclick="index_nav.search_a('','','黔江区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/qianjiang01.png'"
+					onmouseenter="this.src='../project/countyImg/qianjiang.png'"
+					src="../project/countyImg/qianjiang01.png" />
+					<p>黔江</p></li>
+				<li onclick="index_nav.search_a('','','涪陵区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/fuling01.png'"
+					onmouseenter="this.src='../project/countyImg/fuling.png'"
+					src="../project/countyImg/fuling01.png" />
+					<p>涪陵</p></li>
+				<li onclick="index_nav.search_a('','','渝中区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/yuzhong01.png'"
+					onmouseenter="this.src='../project/countyImg/yuzhong.png'"
+					src="../project/countyImg/yuzhong01.png" />
+					<p>渝中</p></li>
+				<li onclick="index_nav.search_a('','','大渡口区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/dadukou01.png'"
+					onmouseenter="this.src='../project/countyImg/dadukou.png'"
+					src="../project/countyImg/dadukou01.png" />
+					<p>大渡口</p></li>
+				<li onclick="index_nav.search_a('','','江北区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/jiangbei01.png'"
+					onmouseenter="this.src='../project/countyImg/jiangbei.png'"
+					src="../project/countyImg/jiangbei01.png" />
+					<p>江北</p></li>
+				<li onclick="index_nav.search_a('','','沙坪坝区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/shapingba01.png'"
+					onmouseenter="this.src='../project/countyImg/shapingba.png'"
+					src="../project/countyImg/shapingba01.png" />
+					<p>沙坪坝</p></li>
+				<li onclick="index_nav.search_a('','','九龙坡区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/jiulongpo01.png'"
+					onmouseenter="this.src='../project/countyImg/jiulongpo.png'"
+					src="../project/countyImg/jiulongpo01.png" />
+					<p>九龙坡</p></li>
+				<li onclick="index_nav.search_a('','','南岸区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/nanan01.png'"
+					onmouseenter="this.src='../project/countyImg/nanan.png'"
+					src="../project/countyImg/nanan01.png" />
+					<p>南岸</p></li>
+				<li onclick="index_nav.search_a('','','北碚区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/beibei01.png'"
+					onmouseenter="this.src='../project/countyImg/beibei.png'"
+					src="../project/countyImg/beibei01.png" />
+					<p>北碚</p></li>
+				<li onclick="index_nav.search_a('','','渝北区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/yubei01.png'"
+					onmouseenter="this.src='../project/countyImg/yubei.png'"
+					src="../project/countyImg/yubei01.png" />
+					<p>渝北</p></li>
+				<li onclick="index_nav.search_a('','','巴南区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/banan01.png'"
+					onmouseenter="this.src='../project/countyImg/banan.png'"
+					src="../project/countyImg/banan01.png" />
+					<p>巴南</p></li>
+				<li onclick="index_nav.search_a('','','长寿区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/changshou01.png'"
+					onmouseenter="this.src='../project/countyImg/changshou.png'"
+					src="../project/countyImg/changshou01.png" />
+					<p>长寿</p></li>
+				<li onclick="index_nav.search_a('','','江津区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/jiangjin01.png'"
+					onmouseenter="this.src='../project/countyImg/jiangjin.png'"
+					src="../project/countyImg/jiangjin01.png" />
+					<p>江津</p></li>
+				<li onclick="index_nav.search_a('','','合川区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/hechuan01.png'"
+					onmouseenter="this.src='../project/countyImg/hechuan.png'"
+					src="../project/countyImg/hechuan01.png" />
+					<p>合川</p></li>
+				<li onclick="index_nav.search_a('','','永川区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/yongchuan01.png'"
+					onmouseenter="this.src='../project/countyImg/yongchuan.png'"
+					src="../project/countyImg/yongchuan01.png" />
+					<p>永川</p></li>
+				<li onclick="index_nav.search_a('','','南川县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/nanchuan01.png'"
+					onmouseenter="this.src='../project/countyImg/nanchuan.png'"
+					src="../project/countyImg/nanchuan01.png" />
+					<p>南川</p></li>
+				<li onclick="index_nav.search_a('','','綦江县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/qijiang01.png'"
+					onmouseenter="this.src='../project/countyImg/qijiang.png'"
+					src="../project/countyImg/qijiang01.png" />
+					<p>綦江</p></li>
+				<li onclick="index_nav.search_a('','','大足县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/dazu01.png'"
+					onmouseenter="this.src='../project/countyImg/dazu.png'"
+					src="../project/countyImg/dazu01.png" />
+					<p>大足</p></li>
+				<li onclick="index_nav.search_a('','','璧山县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/bishan01.png'"
+					onmouseenter="this.src='../project/countyImg/bishan.png'"
+					src="../project/countyImg/bishan01.png" />
+					<p>璧山</p></li>
+				<li onclick="index_nav.search_a('','','铜梁县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/tongliang01.png'"
+					onmouseenter="this.src='../project/countyImg/tongliang.png'"
+					src="../project/countyImg/tongliang01.png" />
+					<p>铜梁</p></li>
+				<li onclick="index_nav.search_a('','','潼南县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/tongnan01.png'"
+					onmouseenter="this.src='../project/countyImg/tongnan.png'"
+					src="../project/countyImg/tongnan01.png" />
+					<p>潼南</p></li>
+				<li onclick="index_nav.search_a('','','荣昌县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/rongchang01.png'"
+					onmouseenter="this.src='../project/countyImg/rongchang.png'"
+					src="../project/countyImg/rongchang01.png" />
+					<p>荣昌</p></li>
+				<li onclick="index_nav.search_a('','','开州县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/kaizhou01.png'"
+					onmouseenter="this.src='../project/countyImg/kaizhou.png'"
+					src="../project/countyImg/kaizhou01.png" />
+					<p>开州</p></li>
+				<li onclick="index_nav.search_a('','','梁平县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/liangping01.png'"
+					onmouseenter="this.src='../project/countyImg/liangping.png'"
+					src="../project/countyImg/liangping01.png" />
+					<p>梁平</p></li>
+				<li onclick="index_nav.search_a('','','武隆县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/wulong01.png'"
+					onmouseenter="this.src='../project/countyImg/wulong.png'"
+					src="../project/countyImg/wulong01.png" />
+					<p>武隆</p></li>
+				<li onclick="index_nav.search_a('','','城口县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/chengkou01.png'"
+					onmouseenter="this.src='../project/countyImg/chengkou.png'"
+					src="../project/countyImg/chengkou01.png" />
+					<p>城口</p></li>
+				<li onclick="index_nav.search_a('','','丰都县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/fengdu01.png'"
+					onmouseenter="this.src='../project/countyImg/fengdu.png'"
+					src="../project/countyImg/fengdu01.png" />
+					<p>丰都</p></li>
+				<li onclick="index_nav.search_a('','','忠县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/zhongxian01.png'"
+					onmouseenter="this.src='../project/countyImg/zhongxian.png'"
+					src="../project/countyImg/zhongxian01.png" />
+					<p>忠县</p></li>
+				<li onclick="index_nav.search_a('','','垫江县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/dianjiang01.png'"
+					onmouseenter="this.src='../project/countyImg/dianjiang.png'"
+					src="../project/countyImg/dianjiang01.png" />
+					<p>垫江</p></li>
+				<li onclick="index_nav.search_a('','','云阳县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/yunyang01.png'"
+					onmouseenter="this.src='../project/countyImg/yunyang.png'"
+					src="../project/countyImg/yunyang01.png" />
+					<p>云阳</p></li>
+				<li onclick="index_nav.search_a('','','奉节县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/fengjie01.png'"
+					onmouseenter="this.src='../project/countyImg/fengjie.png'"
+					src="../project/countyImg/fengjie01.png" />
+					<p>奉节</p></li>
+				<li onclick="index_nav.search_a('','','巫山县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/wushan01.png'"
+					onmouseenter="this.src='../project/countyImg/wushan.png'"
+					src="../project/countyImg/wushan01.png" />
+					<p>巫山</p></li>
+				<li onclick="index_nav.search_a('','','巫溪县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/wuxi01.png'"
+					onmouseenter="this.src='../project/countyImg/wuxi.png'"
+					src="../project/countyImg/wuxi01.png" />
+					<p>巫溪</p></li>
+				<li onclick="index_nav.search_a('','','石柱县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/shizhu01.png'"
+					onmouseenter="this.src='../project/countyImg/shizhu.png'"
+					src="../project/countyImg/shizhu01.png" />
+					<p>石柱</p></li>
+				<li onclick="index_nav.search_a('','','秀山县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/xiushan01.png'"
+					onmouseenter="this.src='../project/countyImg/xiushan.png'"
+					src="../project/countyImg/xiushan01.png" />
+					<p>秀山</p></li>
+				<li onclick="index_nav.search_a('','','酉阳县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/youyang01.png'"
+					onmouseenter="this.src='../project/countyImg/youyang.png'"
+					src="../project/countyImg/youyang01.png" />
+					<p>酉阳</p></li>
+				<li onclick="index_nav.search_a('','','彭水县')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/pengshui01.png'"
+					onmouseenter="this.src='../project/countyImg/pengshui.png'"
+					src="../project/countyImg/pengshui01.png" />
+					<p>彭水</p></li>
+				<li onclick="index_nav.search_a('','','万盛区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/wansheng01.png'"
+					onmouseenter="this.src='../project/countyImg/wansheng.png'"
+					src="../project/countyImg/wansheng01.png" />
+					<p>万盛</p></li>
+				<li onclick="index_nav.search_a('','','万州区')"><img width="100"
+					onmouseleave="this.src='../project/countyImg/liangjiangxinqu01.png'"
+					onmouseenter="this.src='../project/countyImg/liangjiangxinqu.png'"
+					src="../project/countyImg/liangjiangxinqu01.png" />
+					<p>两江新区</p></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="in_box mt20">
+		<div class="in_box_ti">
+			<p class="tit">
+				<span>服务保障</span>
+			</p>
+			<p>
+				<img src="../project/images/tit3.png">
+			</p>
+		</div>
+		<div class="in_box_ci">
+			<div class="in_wfbz">
+				<ul class="clearfix">
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico10"></i>
+							</p>
+							<p class="ti">100%版权保证</p>
+							<p>"视觉重庆"图片内容均拥有来自重庆各摄影机构及优秀摄影师的授权，其中包含重庆日报创刊来的百万级历史影像珍档案，可放心购买使用。</p>
+						</div>
+					</li>
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico11"></i>
+							</p>
+							<p class="ti">超高性价比</p>
+							<p>您可根据需求单张购买；也可与客服联系，选择最据性价比套餐。"视觉重庆"图片库突出服务重庆的功能，在保证摄影师收益的情况下，我们会将图片销售利润降到最低。</p>
+						</div>
+					</li>
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico12"></i>
+							</p>
+							<p class="ti">海量图片资源</p>
+							<p>"视觉重庆"图片库是拥有重庆影像最多的图片库，图片数量达200万张以上，由于"视觉重庆"刚上线，大量图片还在审核上传中，若未查询到您需要的图片，可直接联系客服。</p>
+						</div>
+					</li>
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico13"></i>
+							</p>
+							<p class="ti">珍贵历史影像</p>
+							<p>"视觉重庆"图片库在重庆日报的历史图片支撑下与重庆美术公司及众多老摄影家达成独家版权代理合作协议，这让我们成为全国拥有重庆历史珍档图片最多的图片库。</p>
+						</div>
+					</li>
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico14"></i>
+							</p>
+							<p class="ti">全面服务</p>
+							<p>"视觉重庆"图片库是重庆摄影记者、通讯员及签约摄影师最多的影像机构。我们拥有强大的影像策划及生产能力，可为你定制各类影像服务，最大限度满足您的影像需求。</p>
+						</div>
+					</li>
+					<li>
+						<div class="in_wza">
+							<p>
+								<i class="ico ico15"></i>
+							</p>
+							<p class="ti">发票报销</p>
+							<p>"视觉重庆"图片库每月都会为摄影师提供销售账单，同时为图片购买单位提供发票，请务必填写好邮寄地址，我们会快递到您。</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="in_box in_zxhb w_auto">
+		<div class="in_box_ti">
+			<p class="tit">
+				<span>合作伙伴</span>
+			</p>
+			<p>
+				<img src="../project/images/tit2.png">
+			</p>
+		</div>
+		<div class="in_box_ci">
+			<div class="in_hzhb">
+				<div class="inhz_lt">
+					<i class="ico ico16"></i>
+				</div>
+				<div class="inhz_rt">
+					<i class="ico ico17"></i>
+				</div>
+				<div class="in_outBox">
+					<div class="in_rili">
+						<!-- 	            	<ul class="in_riItem" >
+	                	<li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_54.png"></p>
+	                            <p class="ci">1111111沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                    <li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_56.png"></p>
+	                            <p class="ci">沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                    <li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_58.png"></p>
+	                            <p class="ci">沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                </ul> -->
+						<!-- 	                <ul class="in_riItem">
+	                	<li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_54.png"></p>
+	                            <p class="ci">2222222沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                    <li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_56.png"></p>
+	                            <p class="ci">沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                    <li>
+	                    	<div class="rili">
+	                        	<p class="log"><img src="../project/images/in_58.png"></p>
+	                            <p class="ci">沙坪坝区文管所相关负责人介绍，由于傅抱石居住于沙坪坝的金刚坡下，因而此后他常在画上题署“金刚坡下斋”。关于傅抱石在金刚坡的居址，他曾在“傅抱石壬午重庆画展”自序中有过简要描述。</p>
+	                            <p class="art">重庆晚报主编：杨小兰</p>
+	                        </div>
+	                    </li>
+	                </ul> -->
+
+						<ul class="in_riItem">
+							<li>
+								<div class="rili">
+									<p class="log">
+										<img src="../project/images/cqkx.jpg"
+											style="width: 300px; margin-top: 40%">
+									</p>
+
+								</div>
+							</li>
+							<li>
+								<div class="rili">
+									<p class="log" style="vertical-align: middle;">
+										<img src="../project/images/cqslywhfzwyh.jpg"
+											style="width: 300px;">
+									</p>
+
+								</div>
+							</li>
+							<li>
+								<div class="rili">
+									<p class="log" style="vertical-align: middle;">
+										<img src="../project/images/fwkj.jpg">
+									</p>
+
+								</div>
+							</li>
+						</ul>
+						<ul class="in_riItem">
+							<li>
+								<div class="rili">
+									<p class="log" style="vertical-align: middle;">
+										<img src="../project/images/jrtt.jpg" style="width: 300px">
+									</p>
+
+								</div>
+							</li>
+							<li>
+								<div class="rili">
+									<p class="log">
+										<img src="../project/images/lsp.jpg">
+									</p>
+
+								</div>
+							</li>
+							<li>
+								<div class="rili">
+									<p class="log">
+										<img src="../project/images/xxty.jpg" style="margin-top: 30%">
+									</p>
+
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 合作伙伴图标 -->
+			<!--         <div class="in_hzhb">
+        	<div class="minlog">
+            	<ul class="clearfix">
+                	<li><img src="../project/images/in_64.png"></li>
+                    <li><img src="../project/images/in_66.png"></li>
+                    <li><img src="../project/images/in_68.png"></li>
+                    <li><img src="../project/images/in_70.png"></li>
+                    <li><img src="../project/images/in_72.png"></li>
+                    <li><img src="../project/images/in_74.png"></li>
+                    <li><img src="../project/images/in_76.png"></li>
+                </ul>
+            </div>
+        </div> -->
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="faut w_auto">
+		<div class='comWidth'>
+			<div class="wer">
+				<p>
+					<img src="../project/images/er_03.jpg" width="100" height="100">
+				</p>
+				<p class="mt5">微信公众号</p>
+			</div>
+			<ul class="clearfix">
+				<li>
+					<div class="ftc">
+						<div class="ti">主要产品</div>
+						<div class="ci">
+							<!--  <a href="">新闻图片</a>  -->
+							<!-- 	                    <a href="photographer.html">重庆摄影师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','','')">重庆区县</a>
+	                    <a href="photographer.html?photographer=photographer">重庆设计师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','老照片','')">重庆老照片</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','企业图片','')">重庆企业</a> -->
+							<p class="cp">新闻图片</p>
+							<p class="cp">重庆摄影师</p>
+							<p class="cp">重庆区县</p>
+							<p class="cp">重庆设计师</p>
+							<p class="cp">重庆老照片</p>
+							<p class="cp">重庆企业</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="ftc">
+						<div class="ti">增值服务</div>
+						<div class="ci">
+							<!--  <a href="#">定制拍摄</a>
+	                    <a href="#">法律维权</a>
+	                    <a href="#">摄影活动</a>
+	                    <a href="#">视觉策划</a>
+	                    <a href="#">画册设计</a>
+	                    <a href="#">摄影节庆</a> -->
+							<p class="cp">定制拍摄</p>
+							<p class="cp">法律维权</p>
+							<p class="cp">摄影活动</p>
+							<p class="cp">视觉策划</p>
+							<p class="cp">画册设计</p>
+							<p class="cp">摄影节庆</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="ftc">
+						<div class="ti">联系我们</div>
+						<div class="ci">
+							<p>邮箱：2230623082@qq.com</p>
+							<p>电话：023-6390 7227</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer w_auto">版权所有©重庆日报社 运营方©重庆日报社 渝ICP备17015920号-2
+	</div>
+	<script type="text/javascript" src="../project/js/jquery.min.js"></script>
+	<!-- 顶部导航 和 部分公共方法 -->
+	<script type="text/javascript" src="../project/js/public/public.js"></script>
+	<!-- 轮播插件  -->
+
+	<script type="text/javascript"
+		src="../../public-plug/slick/js/slick.min.js"></script>
+	<!-- <script type="text/javascript" src="../project/js/unslider.min.js" ></script> -->
+	<!-- layer 弹出框 -->
+	<script type="text/javascript" src="../../layer/layer.js"></script>
+	<!-- 收藏功能 -->
+	<script type="text/javascript" src="../js/in_browse.js"></script>
+	<!-- 图片查询功能 -->
+	<script type="text/javascript" src="../js/in_search.js"></script>
+
+	<!-- 首页页面效果 -->
+	<script type="text/javascript" src="../project/js/index/index.js"></script>
+	<!-- 首页功能 -->
+	<script type="text/javascript" src="../js/html/index.js"></script>
+	<!-- 顶部标题 功能 -->
+	<script type="text/javascript" src="../js/html/index_nav.js"></script>
+	<script type="text/javascript">
+		index.init();//首页
+		index_nav.init();//导航 
+		in_search.loadFirstLevelPicSort();
+	</script>
+	<!-- 加入购物车 功能 -->
+	<script type="text/javascript" src="../js/in_pay.js"></script>
+</body>
+</html>
+
+

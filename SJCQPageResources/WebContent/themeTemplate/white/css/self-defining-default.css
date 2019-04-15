@@ -1,0 +1,52 @@
+@import "../../../manage/html-css/main/default.css";
+body {
+  background-color: #FFFFFF !important;
+}
+.page-sidebar {
+  background-color: #FFFFFF !important;
+}
+ul.page-sidebar-menu > li.active > a {
+  background: #9B9B9B !important;
+  border-top-color: transparent !important;
+  color: #ffffff;
+}
+ul.page-sidebar-menu li > ul.sub-menu > li > a {
+  color: #000 !important;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #0F4F7D !important;
+  background-image: -moz-linear-gradient(top, #0F4F7D, #0F4F7D) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0F4F7D), to(#0F4F7D)) !important;
+  background-image: -webkit-linear-gradient(top, #0F4F7D, #0F4F7D) !important;
+  background-image: -o-linear-gradient(top, #0F4F7D, #0F4F7D) !important;
+  background-image: linear-gradient(to bottom, #0F4F7D, #0F4F7D) !important;
+  background-repeat: repeat-x !important;
+  border-color: #0F4F7D !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0F4F7D', endColorstr='#0F4F7D', GradientType=0) !important;
+}
+.header .nav li.dropdown .dropdown-toggle i {
+  color: #ffffff !important;
+}
+ul.page-sidebar-menu > li > a {
+  border-top-width: 0px !important;
+  color: #525252 !important;
+}
+#tabMenue {
+  border-bottom-color: #3bb7f5;
+}
+#tabMenue li > a {
+  background-color: #3bb7f5 !important;
+  color: white  !important;
+}
+#tabMenue li.active > a {
+  background-color: #38a2e0 !important;
+  color: white  !important;
+}
+.breadcrumb {
+  display: block !important;
+}
+ul.page-sidebar-menu > li.active > a > .title {
+  color: #FFFFFF  !important;
+}
+/*# sourceMappingURL=self-defining-default.css.map */

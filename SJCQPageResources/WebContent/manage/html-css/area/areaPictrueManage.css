@@ -1,0 +1,20 @@
+/**区县管理样式**/
+body{
+	background-color: rgba(251, 251, 251, 0.3);
+}
+#search-content {
+	margin-top: 10px;
+}
+
+.search-condition-div {
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+.area_content{
+	width:100%;
+	height:600px;
+}
+.areaColor{
+	background-color: yellow;
+}

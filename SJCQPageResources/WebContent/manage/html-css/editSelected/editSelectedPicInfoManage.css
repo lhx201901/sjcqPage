@@ -1,0 +1,30 @@
+/*»»√≈Õº∆¨css*/
+body{
+	background-color: rgba(251, 251, 251, 0.3);
+}
+#search-content{
+	margin-top: 10px;
+}
+.search-condition-div{
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+.role_content{
+	width:100%;
+}
+
+#hotPic{
+	table-layout: fixed;
+	margin-bottom: 50px;
+}
+
+#hotPic td{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.areaColor{
+	background-color: #0080ff;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>图片管理页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/auditManage/pictureManage.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../html-js/auditManage/pictureManage.js"> </script>
+<script type="text/javascript" src="../../html-js/auditManage/pictureManage_fun.js"> </script>
+</head>
+<body>
+	<div id="pictureAudit_content" class="pictureAudit_content">
+		<div id="search-content">
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">查看方式：</label>
+				<select class="select-width" id="dataType">
+					<option value="pic">图片</option>
+					<option value="tj">图集</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">图片来源：</label>
+				<select id="dataSource" class="select-width">
+					<option value="">全部图片</option>
+					<option value="0">官网上传</option>
+					<option value="1">系统上传</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">任务类型：</label>
+				<select id="taskType" class="select-width">
+					<option value="">全部</option>
+					<option value="-1">无审核任务</option>
+					<option value="0">新增</option>
+					<option value="1">编辑</option>
+					<option value="2">删除</option>
+					<option value="6">上架</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">审核状态：</label>
+				<select id="auditType" class="select-width">
+					<option value="">全部</option>
+					<option value="1">未提交</option>
+					<option value="2">待审核</option>
+					<option value="3">审核通过</option>
+					<option value="4">审核不通过</option>
+					<option value="5">审核完结未发布</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">检索词：</label>
+				<input type="text" class="form-control report_data_table_td  input-width" id="searchWord"  style="margin-bottom:6px;">
+			</div>
+			<div class="search-condition-div" id="buttonDiv">
+				<input id="se" type="button" value="检索" class="report_data_table_but btn " onclick="searchAuditData()" />
+				<input type="button" value="批量加入轮播链接" class="report_data_table_but btn btn-primary" onclick="batchAddBrocast()" />
+				<input type="button" value="批量加入编辑精选" class="report_data_table_but btn btn-warning" onclick="batchAddEditSelect()" />
+				<input type="button" value="批量加入活动" class="report_data_table_but btn btn-inverse" onclick="batchAddEvent()" />
+				<input type="button" value="批量加入区县" class="report_data_table_but btn btn-success" onclick="batchAddArea()" />
+				<input id="tj" type="button" value="批量提交" class="report_data_table_but btn btn-info" onclick="batchTaskSubmit()" />
+				<input id="fb" type="button" value="批量发布" class="report_data_table_but btn btn-warning" onclick="batchRelase()" />
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="pictureAuditDataTablePre">
+			<table id="pictureAuditDataTable" class="table-bordered table-hover"></table>
+		</div>
+	</div>
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+		<div class="modal-body"></div>
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

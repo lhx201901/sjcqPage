@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>编辑供稿人信息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport"
+ content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../../../vision/project/css/base.css" />
+<link rel="stylesheet" href="../../../vision/project/css/style.css" />
+<link rel="stylesheet" href="../../../vision/project/css/user.css" />
+<link rel="stylesheet" href="../../../vision/project/css/admin.css" />
+<!-- <link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" /> -->
+<link href="../../html-css/userAudit/addContributor.css"
+	rel="stylesheet" type="text/css" />
+<!--  <link href="../../html-css/userAudit/personInfo.css" rel="stylesheet" type="text/css" />  -->
+<script type="text/javascript"
+	src="../../../vision/project/js/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../vision/project/js/jquery.page.js"></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<!-- 添加供稿人 -->
+<script type="text/javascript"
+	src="../../html-js/userAudit/updateContributor2.js"></script>
+<script type="text/javascript"
+	src="../../../plug/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js">
+	
+</script>
+<script type="text/javascript"
+	src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript"
+	src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript"
+	src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<!-- 顶部标题 功能 -->
+<script type="text/javascript"
+	src="../../../vision/js/html/index_nav.js"></script>
+</head>
+<body>
+	<div id="userAudit_addContributor" class="userAudit_addContributor">
+		<div>
+		<!-- 基本信息 -->
+		<div class="application_basic middleContent">
+			<div class="w_auto">
+				<div class="inboxn">
+					<p class="in_title">填写基本信息</p>
+					<div class="mt50">
+				
+						<div class="in_text">
+							<span class="itic">真实姓名</span>
+							<div class="intxts">
+								<input name="aplInfoBasicRealName" style="margin-bottom: 5px;"
+									type="text" class="text" placeholder="请输入真实姓名">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">姓名拼音(大写)</span>
+							<div class="intxts">
+								<input name="aplInfoBasicNameSpell" style="margin-bottom: 5px;"
+									type="text" class="text" placeholder="请输入姓名拼音">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">手机号码</span>
+							<div class="intxts">
+								<input name="aplInfoBasicCellPhone" style="margin-bottom: 5px;"
+									type="text" class="text" placeholder="请输入手机号码">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">性别</span>
+							<div class="pt10">
+								<span class="apl_sex selt" data="1"><i
+									class="ico ico56 mr5"></i>男</span> <span class="apl_sex" data="0"><i
+									class="ico ico55 mr5"></i>女</span>
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">所属公司</span>
+							<div class="intxts">
+								<input name="aplInfoBasicCompany" style="margin-bottom: 5px;"
+									type="text" class="text" placeholder="请输入所属公司">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="separateDiv"></div>
+		<!-- 验证信息 -->
+		<div class="application_verify middleContent1">
+			<div class="w_auto">
+				<div class="inboxn">
+					<p class="in_title">填写合同信息</p>
+					<div class="mt50">
+						<div class="in_text">
+							<span class="itic">供稿人类型</span>
+							<div class="selts fl">
+								<select class="sect" id="personType">
+									<option value="1">摄影师</option>
+									<option value="2">设计师</option>
+								</select>
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">身份证号</span>
+							<div class="intxts">
+								<input name="vfctIdentityCard" style="margin-bottom: 5px;"
+									type="text" class="text" placeholder="请输入身份证号">
+							</div>
+						</div>
+							<div class="in_text">
+							<span class="itic">所在地区</span>
+							<div class="intxts">
+								<input type="text" name="region" style="margin-bottom: 5px;"
+									class="text" placeholder="请输入所在地区">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">通信地址</span>
+							<div class="intxts">
+								<input type="text" name="address" style="margin-bottom: 5px;"
+									class="text" placeholder="请输入通讯地址">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">邮政编码</span>
+							<div class="intxts">
+								<input type="text" name="postcode" style="margin-bottom: 5px;"
+									class="text" placeholder="请输入邮政编码">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">银行卡号</span>
+							<div class="intxts">
+								<input type="text" name="bankCard" style="margin-bottom: 5px;"
+									class="text" placeholder="请输入银行卡号">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">银行用户名</span>
+							<div class="intxts">
+								<input type="text" name="bankUserName"
+									style="margin-bottom: 5px;" class="text" placeholder="请输入银行用户名">
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">开户行名称</span>
+							<div class="intxts">
+								<input type="text" name="bankName" class="text"
+									placeholder="请输入开户行名称">
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="application_basic middleContent" style="margin-top:-120px;">
+			<div class="w_auto">
+				<div class="inboxn">
+					<!-- <p class="in_title">填写基本信息</p> -->
+					<div class="mt50">				
+						<div class="in_text">
+							<span class="itic">个人头像：</span>
+							<img id="actor" src="" style="border: 1px solid #C0C1C0; " /><!-- width: 80px; height: 80px; -->
+						</div>
+						<div class="in_text">
+							<span class="itic">个人封面：</span>
+						    <img id="cover" src="" style=" border: 1px solid #C0C1C0;" /><!-- width: 120px; height: 160px; -->
+						</div>
+						<div class="in_text">
+							<span class="itic">证件照：</span>
+							<img id="IDPhotoZ" src="" style="border: 1px solid #C0C1C0;  "/><!-- /* width: 80px; height: 80px;" */ -->
+						    <img id="IDPhotoF" src="" style="border: 1px solid #C0C1C0; "/><!-- width: 80px; height: 80px; -->
+						</div>
+						<div class="in_text">
+							<span class="itic">银行卡照片:</span>
+							<img id="bankCard" src="" style="border: 1px solid #C0C1C0; " /><!-- width: 80px; height: 80px; -->
+						</div>
+						<div class="in_text">
+							<span class="itic">样品图：</span>
+							<div class="intxts" id="samplePhoto">								
+							</div>
+						</div>
+						<div class="in_text">
+							<span class="itic">状态：</span>
+							<span id="auditStatus">待审核</span>						
+						</div>
+						<div class="in_text">
+							<span class="itic">审核备注：</span>
+						    <textarea id='userRemarks' style="width: 450px; height: 100px;" maxlength="500"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn_ok" onclick="auditPass(1)">审核通过</button>
+             <button class="btn btn_ok" onclick="auditPass(2)">审核不通过</button> 
+		</div>
+	</div> 
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+
+		<div class="modal-body"></div>
+
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

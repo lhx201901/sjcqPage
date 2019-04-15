@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>视觉重庆</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+<!-- 页面样式 -->
+<link rel="stylesheet" href="../project/css/base.css"/>
+<link rel="stylesheet" href="../project/css/admin.css"/>
+<link rel="stylesheet" href="../project/css/style.css"/>
+</head>
+<body>
+<div class="head">
+    <div class="w_auto clearfix h_outBox">
+        <div class="top_box">
+            <a href="index.html" class="top_logo"><img src="../project/images/logo.svg"></a>
+            <div class="h_top_nav">
+                <ul class="h_topUl">
+                    <li>
+                        <a href="index.html" class="h_dh">首页</a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+						  <a href="newsPhoto.html" class="h_dh">新闻图片</a>
+						  <div class="dropdown-content" id="newsSecondType">
+						  </div>
+						</div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+						  <a href="imgLibrary.html" class="h_dh">图库</a>
+						  <div class="dropdown-content">
+						    <a href="imgLibrary.html">区县图片</a>
+						    <a href="javascript:index_nav.searchType('老照片','')">老照片</a>
+						    <a href="javascript:index_nav.searchType('企业图片','')">企业图片</a>
+						    <a href="javascript:index_nav.searchType('创意图片','')">创意图片</a>
+						    <a href="javascript:index_nav.searchType('重要图片','')">重要图片</a>
+						    <a href="javascript:index_nav.searchType('图片故事','')">图片故事</a>
+						  </div>
+						</div>
+                    </li>
+                    <li>
+                        <a href="activities.html" class="h_dh">摄影活动</a>
+                    </li>
+                    <li>
+                        <a href="photographer.html" class="h_dh">摄影师</a>
+                    </li>
+                    <li id="grapher_type" >
+                        <a href="photographer.html?photographer=photographer" class="h_dh">设计师</a>
+                    </li>
+                    <li>
+                        <!-- <a href="increment.html" class="h_dh">增值服务</a> -->
+                         <a href="#" onclick="index_nav.alertCreating()" class="h_dh">增值服务</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="index_nav.alertCreating()" class="h_dh">视频</a>
+                    </li>
+                </ul>
+                <div class="h_excess">
+                    <p class="h_point">···</p>
+                    <ul class="h_eol">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="user_qt_ed">
+            <div class="user_info_n" id="account_no" style="display: none;">
+                <a href="#" class="h_gwc"><i class="ico ico1"></i></a>
+                <a id="account" href="javascript:void(0)" onclick="index_nav.open('../login.html')" class="h_login">登录</a>
+                <u>|</u>
+                <a href="javascript:void(0)" onclick="index_nav.open('../register.html')" class="h_sing">注册</a>
+            </div> 
+            <div class="user_info_n" id="account_yes" style="display: none;">
+                <a href="javascript:void(0)" class="h_gwc"><i class="ico ico1"></i><em id="yes_num">0</em></a>
+                <span class="u_info_img" onclick="index_nav.user_jump()"><img width="26px" height="26px" id="yes_img" src=""></span>
+                <span class="u_info_name" id="yes_name" onclick="index_nav.user_jump()">- -</span>
+                <div class="most_ed_mg">
+                        <ul>
+                            <li><a href="javascript:void(0)" onclick="index_nav.user_jump()" >个人信息</a></li>
+                            <!-- <li><a href="#">我的购买</a></li>
+                            <li><a href="#">账号管理</a></li> -->
+                            <li><a href="javascript:void(0)"  onclick="index_nav.loginOut()" >退出登录</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="simg clearfix"><img id="user_cover" src="../project/images/userbaner_02.jpg"></div>
+<div class="user_info_msg">
+	<div class="w_auto">
+    	<div class="user_img"><img id="user_actor" src="../project/images/userctr.png" width="104" height="104"></div>
+        <div class="user_name">-</div>
+        <div class="user_con">--</div>
+        <div class="user_vt">
+        	<span id="user_address">-  -</span><u>|</u>
+            <span id="user_nOfWorks">- -</span><u>|</u>
+            <span id="user_focus">- -</span><u>|</u>
+            <span id="user_viewed">- -</span>
+        </div>
+    </div>
+</div>
+<div class="user_qh_tab">
+	<a href="javascript:void(0)" onclick="photoGBasics.page_div(0,this)" class="cur">代表作品</a>
+    <a href="javascript:void(0)" onclick="photoGBasics.page_div(1,this)" >图集</a>
+</div>
+
+<div class="ed_jximg ed_jximg2" id="pic_opus">
+    <div class="img_prt">
+        <ul class="clearfix" id="opus_list">
+        </ul>
+    </div>
+    <div id="loadPage">
+    </div>
+     
+</div>
+
+<div class="ed_jximg ed_jximg2" id="tj_opus" style="display: none;">
+    <div class="img_prt">
+        <ul class="clearfix" id="opus_list_tj">
+        </ul>
+    </div>
+ 
+</div>
+<div class="faut">
+    <ul class="clearfix">
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">主要产品</div>
+	                <div class="ci">
+	                    <!--  <a href="">新闻图片</a>  -->
+<!-- 	                    <a href="photographer.html">重庆摄影师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','','')">重庆区县</a>
+	                    <a href="photographer.html?photographer=photographer">重庆设计师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','老照片','')">重庆老照片</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','企业图片','')">重庆企业</a> -->
+	                    <p class="cp">新闻图片</p> 
+	                    <p class="cp">重庆摄影师</p> 
+	                    <p class="cp">重庆区县</p> 
+	                    <p class="cp">重庆设计师</p> 
+	                    <p class="cp">重庆老照片</p> 
+	                    <p class="cp">重庆企业</p> 
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">增值服务</div>
+	                <div class="ci">
+	                   <!--  <a href="#">定制拍摄</a>
+	                    <a href="#">法律维权</a>
+	                    <a href="#">摄影活动</a>
+	                    <a href="#">视觉策划</a>
+	                    <a href="#">画册设计</a>
+	                    <a href="#">摄影节庆</a> -->
+	                    <p class="cp">定制拍摄</p> 
+	                    <p class="cp">法律维权</p> 
+	                    <p class="cp">摄影活动</p> 
+	                    <p class="cp">视觉策划</p> 
+	                    <p class="cp">画册设计</p> 
+	                    <p class="cp">摄影节庆</p> 
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">联系我们</div>
+	                <div class="ci">
+	                    <p>邮箱：2230623082@qq.com</p>
+	                    <p>电话：023-6390 7227</p>
+	                </div>
+	            </div>
+	        </li>
+	    </ul>
+    <div class="wer">
+        <p><img src="../project/images/er_03.jpg" width="100" height="100"></p>
+        <p class="mt5">微信公众号</p>
+    </div>
+</div>
+<div class="footer">
+    版权所有©重庆日报社 运营方©重庆日报社 渝ICP备17015920号-2
+</div>
+<script type="text/javascript" src="../project/js/jquery.min.js" ></script>
+<script type="text/javascript" src="../project/js/jquery.page.js" ></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../layer/layer.js"></script>
+<!-- 顶部导航 和 部分公共方法 -->
+<script type="text/javascript" src="../project/js/public/public.js" ></script>
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../js/html/index_nav.js"></script>
+<!-- 收藏 关注 功能 -->
+<script type="text/javascript" src="../js/in_browse.js"></script>
+<!-- 查询 功能 -->
+<script type="text/javascript" src="../js/in_search.js"></script>
+<!-- 处理数据的公共方法 -->
+<script type="text/javascript" src="../util/js/getUtil.js"></script>
+<!-- 简单的瀑布流加 -->
+<script type="text/javascript" src="../util/js/waterPall.js"></script>
+<!-- 功能 -->
+<script type="text/javascript" src="../js/html/photoGBasics.js"></script>
+<script type="text/javascript" >
+    index_nav.init();//导航 
+    photoGBasics.init();
+    in_browse.pAndD_browse();//浏览
+</script>
+</body>
+</html>

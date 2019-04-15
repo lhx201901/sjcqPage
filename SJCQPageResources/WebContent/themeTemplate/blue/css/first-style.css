@@ -1,0 +1,15 @@
+.thumbnails li {
+  margin: 0px !important;
+  width: 269px !important;
+}
+.thumbnails li a {
+  border: 0px;
+  padding: 1px !important;
+}
+.thumbnails li a img {
+  width: 320px !important;
+}
+.thumbnails li a p {
+  display: block !important;
+}
+/*# sourceMappingURL=first-style.css.map */

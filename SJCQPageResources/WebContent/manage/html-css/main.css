@@ -1,0 +1,74 @@
+.bady_backgroud{
+/*  	background: url("../../image/manager/u0.jpg") repeat;
+ 	background-size: 100% 100% */
+}
+.nav_hedder {
+	/* position:fixed;  */
+	width: 100%;
+	height: 50px;
+ 	background-image: url("../img/u1920.jpg"); 
+	background-repeat: no-repeat;
+	background-size: 100%;
+	-moz-background-size: 100% 100%;
+	background-repeat: no-repeat;
+/*  	background-color: #378CDD;  */
+}
+
+.dep_title {
+	float: left;
+	color: #333333;
+	padding-top: 18px;
+	padding-left: 20px;
+}
+.dep_title_logo{
+	float: left;
+	/* width: 55px; */
+    height: 45px;
+	padding-top: 3px;
+	padding-left: 20px;
+}
+.dep_title_logo img{
+	/* width: 55px; */
+    height: 45px;
+}
+.dep_title_name{
+	float: left;
+	padding-top: 18px;
+}
+
+.login_div {
+	float: right;
+	padding-top: 15px;
+	padding-right: 2%;
+}
+
+.news_hint {
+	display: none;
+	color: red;
+}
+
+.module_div {
+	float: right;
+	padding-top: 0.3%;
+	display: block;
+}
+
+.navbar .nav>li .dropdown-menu {
+	margin: 0;
+}
+
+.navbar .nav>li:hover .dropdown-menu {
+	display: block;
+}
+
+.content-search {
+	width: 100%;
+}
+
+.container_div {
+	display:none;
+	width: 97%;
+	margin-left: 2%;
+	margin-top: 5px;
+}
+a{cursor:pointer;}

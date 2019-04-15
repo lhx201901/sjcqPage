@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>同步供稿人信息管理页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/userAudit/userAuditManage.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../html-js/userAudit/synContributorManage.js"> </script>
+</head>
+<body>
+<div id="userAudit_content" class="userAudit_content">
+<div id = "search-content">
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;">供稿人类型：</label> <select
+					id="personType" style="width: 100px;margin-bottom:5px;" class="select_width"  onchange="changeAuditStatu()">
+					<option value="1,2">全部</option>
+					<option value="1">摄影师</option>
+					<option value="2">设计师</option> 
+				</select>
+			</div>
+			<div class="search-condition-div">
+			<label style="display: inline; position: relative;">检索词：</label>
+			<input type="text" class="form-control report_data_table_td" id = "area_name">
+		    </div>
+			<div class="search-condition-div">
+		<input type="button" value="检索" class="report_data_table_but btn " onclick="searchUserAuditData()"/>
+		<input type="button" value="批量同步" class="report_data_table_but btn btn-danger" onclick="batchSynchronous()" id="auditButton"/>
+	</div>
+</div>
+
+<div class = "clearfix"></div>
+<div class="userAuditDataTablePre">
+  		<table id="userAuditDataTable" class="table-bordered table-hover"></table>
+</div>
+</div>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3 id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</div>
+</body>
+</html>

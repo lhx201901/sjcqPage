@@ -1,0 +1,51 @@
+@import "../../../manage/html-css/main/default.css";
+@bodyColor:#4f5d73;//页面背景色
+@liActive:#b8dbef; //菜单选项被激活颜色
+@headerColor:#77b3d4;//页头颜色
+@headerColorStr:'#77b3d4';//页头颜色 字符串
+@headIconColor:#ffffff;//页头图标颜色
+@tabMenueColor:#79C3AA;
+@pageTabBGColor:#76C5B2;//页签背景色
+@pageTabActBGC:#6db29f;//页签激活时的背景色
+body {
+  background-color: @bodyColor !important;
+}
+.page-sidebar {
+  background-color: @bodyColor !important;
+}
+
+ul.page-sidebar-menu > li.active > a {
+  background: @liActive !important;
+  border-top-color: transparent !important;
+  color: #ffffff;
+}
+
+
+#tabMenue{
+  border-bottom-color: @tabMenueColor;
+  li > a{
+    background-color: @pageTabBGColor !important;
+    color: white  !important;
+  }
+  li.active > a{
+    background-color: @pageTabActBGC !important;
+    color: white  !important;
+  }
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: @headerColor !important;
+  background-image: -moz-linear-gradient(top,@headerColor, @headerColor) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@headerColor) ,
+  to(#111)) !important;
+  background-image: -webkit-linear-gradient(top, @headerColor, @headerColor) !important;
+  background-image: -o-linear-gradient(top, @headerColor,@headerColor) !important;
+  background-image: linear-gradient(to bottom, @headerColor,@headerColor) !important;
+  background-repeat: repeat-x !important;
+  border-color: @headerColor !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@headerColorStr,
+  endColorstr=@headerColorStr, GradientType=0)!important;
+}
+.header .nav li.dropdown .dropdown-toggle i{
+  color:@headIconColor !important;
+}

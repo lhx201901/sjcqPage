@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>详情审核页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/picture/editPicture.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js">
+	
+</script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js">
+	
+</script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../html-js/picture/editPicture.js">
+	
+</script>
+</head>
+<body>
+	<div class="panel panel-danger" id="person_info_content">
+		<div class="panel-heading">
+			<label>编辑图片信息</label>
+		</div>
+		<div id="person_info_div">
+			<table id="person_info_table" style="width: 100%; margin-top: 20px;" >
+				<tr >
+					<td colspan="6" style="color:red;">图集信息：</td>
+				</tr>
+				<tr >
+					<td rowspan="3">
+						<img id="tjFmlj" src="" style="border: 1px solid #C0C1C0; width: 127px; height: 110px;" />
+					</td>
+					<td class="td-left">导航分类：</td>
+					<td class="td-right"><span id="typeOne"></span></td>
+				</tr>
+				<tr>
+					<td class="td-left">二级页面分类：</td>
+					<td class="td-right"><span id="typeTwo"></span></td>
+				</tr>
+				<tr>
+					<td class="td-left">三级页面分类：</td>
+					<td class="td-right"><span id="typeThree"></span></td>
+				</tr>
+				<tr>
+					<td class="td-left">图集标题：</td>
+					<td class="td-right" colspan="5"><span id="tjBt"></span></td>
+				</tr>
+				<tr>
+					<td class="td-left">图集说明：</td>
+					<td class="td-right" colspan="5"><p id="tjSm"></p></td>
+				</tr>
+				<tr >
+					<td colspan="6" style="color:red;">图片信息：</td>
+				</tr>
+				<tr >
+					<td colspan="2" rowspan="5">
+						<img id="picXdlj" src="" style="border: 1px solid #C0C1C0; width: 330px; height: 330px;" />
+					</td>
+					<td class="td-left">导航分类：</td>
+					<td class="td-right">
+						<select class="select select-levelone">
+							<option value="图片">图片</option>
+							<option value="区县">区县</option>
+							<option value="企业">企业</option>
+							<option value="设计">设计</option>
+							<option value="老照片">老照片</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">二级页面分类：</td>
+					<td class="td-right">
+						<select class="select select-leveltwo">
+							<option value="纪实">纪实</option>
+							<option value="风光">风光</option>
+							<option value="人文">人文</option>
+							<option value="城市">城市</option>
+							<option value="创意">创意</option>
+							<option value="其他">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left levelthree">三级页面分类：</td>
+					<td class="td-right">
+						<select class="select select-levelthree">
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">标题：<br>（30字以内）</td>
+					<td class="td-right" colspan="3">
+						<input type="text"  id="picBt" maxlength="30" style="width:100%;">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left" >关键字、词设置：<br>（30字以内）</td>
+					<td class="td-right" colspan="3">
+						<input type="text"  id="picGjz" maxlength="30" style="width:100%;">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left" >图片说明：<br>（2000字以内）</td>
+					<td class="td-right" colspan="5">
+						<textarea id="picSm" maxlength="2000"  style="width:100%; height:160px;"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">光圈：</td>
+					<td class="td-right">
+						<input type="text" id="picGq" maxlength="30">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">快门：</td>
+					<td class="td-right">
+						<input type="text" id="picKm" maxlength="30">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">ios：</td>
+					<td class="td-right">
+						<input type="text" id="picIos" maxlength="30">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">作者：</td>
+					<td class="td-right">
+						<input type="text" id="picZz" disabled="disabled">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">入库时间：</td>
+					<td class="td-right">
+						<input type="text" id="picRksj" disabled="disabled">
+					</td>
+				</tr>
+				<!-- 
+				<tr>
+					<td class="td-left">源文件：</td>
+					<td class="td-right">
+						<a>下载</a>
+					</td>
+				</tr>
+				 -->
+				<tr>
+					<td colspan="6" style="text-align: center; padding-bottom: 60px;" id="auditBtn">
+						<input type="button" value="同步全集" class="report_data_table_but btn btn-danger sync" onclick="sync()" >
+						<input type="button" value="保存" class="report_data_table_but btn btn-primary" onclick="save()" style="margin-left: 10px;">
+						<input type="button" value="重置" class="report_data_table_but btn btn-warning" onclick="reset()" style="margin-left: 10px;" >
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+
+		<div class="modal-body"></div>
+
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

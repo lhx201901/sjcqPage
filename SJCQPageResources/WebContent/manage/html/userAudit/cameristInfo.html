@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>详情审核页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/userAudit/personInfo.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js">
+	
+</script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js">
+	
+</script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../html-js/userAudit/cameristInfo.js">
+	
+</script>
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+</head>
+<body>
+	<div class="panel panel-danger" id="person_info_content">
+		<div class="panel-heading">
+			<label>摄影师信息</label>
+		</div>
+		<div id="person_info_div">
+			<table id="person_info_table" style="width: 100%;">
+				<tr>
+					<td class="td-left">用户昵称：</td>
+					<td class="td-right">
+						<span id="loginName"></span>
+					</td>
+					<td class="td-left">手机号：</td>
+					<td class="td-right">
+						<span id="phone"></span>
+					</td>
+					<td class="td-left">真实姓名：</td>
+					<td class="td-right">
+						<span id="realName"></span>
+					</td>
+					<td class="td-left">姓名拼音：</td>
+					<td class="td-right">
+						<span id="namePy"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">身份证号：</td>
+					<td class="td-right">
+						<span id="IDNumber"></span>
+					</td>
+					<td class="td-left">性别：</td>
+					<td class="td-right">
+						<span id="sex"></span>
+					</td>
+					<td class="td-left">出生年月：</td>
+					<td class="td-right">
+						<span id="birthDay"></span>
+					</td>
+					<td class="td-left">所在地区：</td>
+					<td class="td-right">
+						<span id="region"></span>
+					</td>
+				</tr>
+				<tr>
+					<!-- <td class="td-left">摄影年限：</td>
+					<td class="td-right">
+						<span id="workYear"></span>
+					</td> -->
+					<td class="td-left" >摄影经历：</td>
+					<td colspan="1" class="td-right">
+						<span id="experience"> </span>
+					</td>
+					<td class="td-left">主修类型：</td>
+					<td class="td-right">
+						<span id="majorType"></span>
+					</td>
+					<td class="td-left">所在单位：</td>
+					<td class="td-right">
+						<span id="unit"></span>
+					</td>
+					<td class="td-left">联络地址：</td>
+					<td class="td-right">
+						<span id="address"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left" >邮政编码：</td>  <!-- style="vertical-align: top;" -->
+					<td colspan="1" class="td-right">
+						<span id="postalCode"> </span>
+					</td>
+					<td class="td-left">开户行名称：</td>
+					<td class="td-right">
+						<span id="bankName"></span>
+					</td>
+					<td class="td-left">银行用户：</td>
+					<td class="td-right">
+						<span id="bankUser"></span>
+					</td>
+					<td class="td-left">银行卡号：</td>
+					<td class="td-right">
+						<span id="bankNumber"></span>
+					</td>
+				</tr>
+				<!-- <tr>
+					<td class="td-left" style="vertical-align: top;">下载权限：</td>
+					<td colspan="7" class="td-right">
+						<span id="downPower"></span>
+					</td>
+				</tr> -->
+			<!-- 	<tr>
+					<td class="td-left" style="vertical-align: top;">摄影经历：</td>
+					<td colspan="7" class="td-right">
+						<span id="experience"> </span>
+					</td>
+				</tr> -->
+				<tr style="vertical-align: top;">
+					<td class="td-left">个人头像：</td>
+					<td colspan="7" class="td-right">
+						<img id="actor" src="" style="border: 1px solid #C0C1C0; width: 80px; height: 80px;" />
+					</td>
+				</tr>
+				<tr style="vertical-align: top;">
+					<td class="td-left">个人封面：</td>
+					<td colspan="7" class="td-right">
+						<img id="cover" src="" style="width: 120px; height: 160px; border: 1px solid #C0C1C0;" />
+					</td>
+				</tr>
+				<tr style="vertical-align: top;">
+					<td class="td-left">证件照：</td>
+					<td colspan="7" class="td-right">
+						<img id="IDPhotoZ" src="" style="border: 1px solid #C0C1C0; width: 80px; height: 80px;" />
+						<img id="IDPhotoF" src="" style="border: 1px solid #C0C1C0; width: 80px; height: 80px;" />
+					</td>
+				</tr>
+					<tr style="vertical-align: top;">
+					<td class="td-left">银行卡照片：</td>
+					<td colspan="7" class="td-right">
+						<img id="bankCard" src="" style="border: 1px solid #C0C1C0; width: 80px; height: 80px;" />
+						
+					</td>
+				</tr>
+				<tr style="vertical-align: top;">
+					<td class="td-left">样品图：</td>
+					<td class="td-right" colspan="7" id="samplePhoto">
+					
+					</td>
+				</tr>
+				<!-- <tr style="vertical-align: top;">
+					<td class="td-left">下载权限：</td>
+					<td colspan="7" class="td-right">
+						<input type="radio" name="downPower" value="0">停用
+						<input type="radio" name="downPower" value="1">启用
+					</td>
+				</tr> -->
+				<tr style="vertical-align: top;" id="info1">
+					<td class="td-left">状态：</td>
+					<td colspan="7" class="td-right">
+						<span id="auditStatus"></span>
+					</td>
+				</tr>
+
+				<tr style="vertical-align: top;" id="info2">
+					<td class="td-left">审核备注：</td>
+					<td colspan="7" class="td-right">
+						<textarea id='userRemarks' style="width: 80%; height: 60px;" maxlength="500"></textarea>
+					</td>
+				</tr>
+
+				<tr id="shtr">
+					<td colspan="8" style="text-align: center; padding-bottom: 60px;">
+						<input type="button" value="审核通过" class="report_data_table_but btn btn-primary" onclick="sureAudit(1)" />
+						<input type="button" value="审核不通过" class="report_data_table_but btn btn-danger" onclick="sureAudit(2)" style="margin-left: 10px;" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+
+		<div class="modal-body"></div>
+
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

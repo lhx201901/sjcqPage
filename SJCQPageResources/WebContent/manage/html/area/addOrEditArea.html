@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>详情审核页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/photographyActive/addOrEditPTA.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script src="../../../plug/bootstrap-closable-tab/bootstrap-closable-tab.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+<script type="text/javascript" src="../../html-js/area/addOrEditArea.js"></script>
+</head>
+<body>
+	<div class="panel panel-danger" id="person_info_content">
+		<div id="person_info_div">
+			<table id="person_info_table" style="width: 100%; margin-top: 20px;" >
+				<tr id="pic-div">
+					<td colspan="2" rowspan="9" id="pic-div" style="vertical-align: top;">
+						<p style="width: 330px; height: 330px;background-color: #EDEDED;border: 1px solid #EDEDED;text-align: center;padding: 0px;margin:0px;display: table-cell;vertical-align: middle;">
+							<img id="picPath" src="" style="max-height: 100%;"/>
+						</p>
+						<p>特别提醒：图片大小345×345（1:1），小于100kb</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">图片上传：</td>
+					<td class="td-right" colspan="3">
+						<div style="float: left;">
+							<input id="pic" class="pic-file" accept="image/*" type="file">
+							<span class="btn">选择图片</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">区县名称：</td>
+					<td class="td-right" colspan="3">
+						<input type="text"  id="aliasName" maxlength="30" style="width:100%;">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">英文名称：</td>
+					<td class="td-right" colspan="3">
+						<input type="text"  id="engName" maxlength="30" style="width:100%;">
+					</td>
+				</tr>
+				<tr>
+					<td class="td-left">备注：</td>
+					<td class="td-right" colspan="3">
+						<textarea id="remark" maxlength="1000" style="width:100%;height:100px;"></textarea>
+					</td>
+				</tr>
+			</table>
+			<div style="text-align:center;margin-top:30px;">
+				<input type="button" value="保存" class="report_data_table_but btn btn-primary" onclick="save()" style="width:130px;height: 40px;">
+			</div>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+
+		<div class="modal-body"></div>
+
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

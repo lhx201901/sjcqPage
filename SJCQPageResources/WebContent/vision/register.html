@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>视觉重庆</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+    <link rel="stylesheet" href="project/css/base.css"/>
+    <link rel="stylesheet" href="project/css/style.css"/>
+    <link rel="stylesheet" href="../layer/mobile/need/layer.css"/>
+    <!-- jquery -->
+    <script type="text/javascript" src="../plug/js/jquery-1.11.1.min.js"></script>
+    <!-- layer 弹出框 -->
+    <script type="text/javascript" src="../layer/layer.js"></script>
+</head>
+<body>
+    <div class="ui_mask"></div>
+    <div class="login_bx">
+        <p class="img"><img src="project/images/loginbg.png" width="360" height="500"></p>
+        <div class="loint">
+            <p class="logooin"><img src="project/images/logo.svg"></p>
+            <div class="lina mt20">
+                <input type="text" class="text" id="phone" placeholder="请输入手机号码">
+            </div>
+            <div class="lina mt20">
+                <input type="text" class="text" id="code" placeholder="请输入短信验证码">
+                <div class="wdts"><a href="javascript:void(0)" id="codeOn" >获取验证码</a></div>
+            </div>
+            <div class="lina mt20">
+                <input type="password" class="text" id="pass" placeholder="请创建您的用户密码（6位数以上组合密码）">
+            </div>
+            <div class="lobtn lobtn2">
+                <button class="btn" onclick="register.add()">确认注册</button>
+            </div>
+            <p align="center" class="mt20 gray9"><input type="checkbox" id="isgree" />点击注册按钮即表示您已同意<a href="javascript:void(0)" onclick="register.showServiceTerms()">《视觉重庆服务条款》</a></p>
+        </div>
+    </div>
+    <!-- 倒计时等待 -->
+    <script type="text/javascript" src="util/js/codeWait.js"></script>
+    <!-- js 功能 -->
+    <script type="text/javascript" src="js/register.js"></script>
+    <script type="text/javascript" >
+        register.init();//初始化数据
+        document.onkeydown=function(event){
+        	var e = event || window.event || arguments.callee.caller.arguments[0];
+        	if(e && e.keyCode==13){ // enter 键c
+        		register.add();
+        	}
+        }
+    </script>
+</body>
+</html>

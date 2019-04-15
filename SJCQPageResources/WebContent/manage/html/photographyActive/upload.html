@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>图片上传</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../alert/esayAlert.css" />
+<link rel="stylesheet" href="../../html-css/photographyActive/upload.css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script src="../../alert/esayAlert.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../html-js/photographyActive/upload.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="vcont" id="up_actives">
+		<div class="up_img">
+			<div class="up_ins">
+				<dl>
+					<dt>文字模版：</dt>
+					<dd>
+						<select class="sct" id="selectText"></select> <!-- <i class="ico ico10"></i> -->
+					</dd>
+				</dl>
+				<dl>
+					<dt>标题：</dt>
+					<dd>
+						<input id="Title" type="text" class="text" placeholder="请输入标题" maxlength="100">
+					</dd>
+				</dl>
+				<dl>
+					<dt>主说明：</dt>
+					<dd>
+						<textarea id="MainExplain" max=200 class="text limit_text"
+							placeholder="填写主说明" style="height: 100px"></textarea>
+						<span class="zsum">0 / 200</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>分说明：</dt>
+					<dd>
+						<textarea id="MinorExplain" max=1000 class="text limit_text"
+							placeholder="填写分说明" style="height: 150px"></textarea>
+						<span class="zsum">0 / 1000</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>图片地点：</dt>
+					<dd>
+						<input id="Adress" type="text" class="text" placeholder="请输入图片地点" maxlength="50">
+					</dd>
+				</dl>
+				<dl>
+					<dt>摄影作者：</dt>
+					<dd>
+						<input id="Author" type="text" class="text" placeholder="请输入摄影作者" maxlength="30">
+					</dd>
+				</dl>
+				<dl>
+					<dt>拍摄时间：</dt>
+					<dd>
+						<div class="input-append date searchDate showSL" style="margin-bottom:0px;height: 30px !important;width: 82%;">
+		                   <input size="16" type="text" style="width: 100%;" id="CreateTime" value="" readonly/>
+		                   <span class="add-on"><i class="icon-remove"></i></span>
+		                   <span class="add-on"><i class="icon-th"></i></span>
+		               </div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>图片分类：</dt>
+					<dd class="clearfix" id="picTypesSel"></dd>
+				</dl>
+				<dl>
+					<dt>图片是否公开：</dt>
+					<dd>
+						<select class="sct" id="picMjSel" disabled="disabled">
+							<option value="">请选择</option>
+							<option value="1" selected>公开</option>
+							<option value="0">非公开</option>
+						</select> <!-- <i class="ico ico10"></i> -->
+					</dd>
+				</dl>
+				<dl>
+					<dt>布局类型：</dt>
+					<dd>
+						<select class="sct" id="picTypeSel">
+						<!-- <option value="">请选择</option> -->
+							<option value="0">横幅</option>
+							<option value="1">竖幅</option>
+						</select> <!-- <i class="ico ico10"></i> -->
+					</dd>
+				</dl>
+				<dl>
+					<dt>价格：</dt>
+					<dd>
+						<input id="picJg" type="text" class="text" style="width:280px" placeholder="请输入价格" maxlength="16" 
+							 onkeyup= "if(!/^\d+(\.\d{0,2})?$/.test(this.value)){this.value='';}" >（元）
+					</dd>
+				</dl>
+				<dl>
+					<dt>关键字：</dt>
+					<dd>
+						<div>
+							<input id="Keywords" type="text" class="text"
+								placeholder="请输入关键字（以空格隔开）" maxlength="200"> <i class="ico ico16"></i>
+						</div>
+						<div id="KeywordTips" class="keyword"></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>
+						<div class="mt20">
+							<a class="btn btn_ok btn-danger" id="savePic" onclick="saveEditPic()" >保存修改</a> 
+							<a href="#" class="btn ml10" id="saveTempText" onclick="saveTempText()">存为模板</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="pic_li pic_li3">
+				<ul id="UploadImages" class="clearfix" style="list-style:none;">
+					<li class="picn up_adimg_bg"><label><div class="up_adimg">点击上传图片</div>
+							<input accept="image/*" multiple="multiple" id="UploadFile"
+							hidden="hidden" type="file" /></label></li>
+				</ul>
+			</div>
+			<div style="display: none;" id="TextTemplate" class="img_msg_text">
+
+			</div>
+			<div class="up_img_btn" style="display:none">
+                <a class="btn btn_ok btn-danger" id="saveToUpload" onclick="saveToUpload()">上传作品</a>
+            </div>
+		</div>
+
+	</div>
+	<div id="ModalAlert" class="ui_mask">
+		<div class="ui_box">
+			<div action="close_modal" class="close">
+				<i class="ico ico9"></i>
+			</div>
+			<div class="ui_tit"></div>
+			<div class="ui_con innox"></div>
+			<div class="ui_btj" style="text-align: center;"></div>
+		</div>
+	</div>
+</body>
+</html>

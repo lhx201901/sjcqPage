@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>视觉重庆</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+<link rel="stylesheet" href="../project/css/base.css"/>
+<link rel="stylesheet" href="../project/css/user_uploadImg.css"/>
+<link rel="stylesheet" href="../project/css/user.css"/>
+<link rel="stylesheet" type="text/css" href="../project/table/esayTable.css" />
+<link rel="stylesheet" type="text/css" href="../../plug/alert/esayAlert.css" />
+<link rel="stylesheet" type="text/css" href="../project/css/photoManage/photoManage.css" />
+</head>
+<body>
+<div class="head">
+	<div class="w_auto clearfix h_outBox">
+		<div class="top_box">
+			<a href="index.html" class="top_logo"><img src="../project/images/logo.svg"></a>
+			<div class="h_top_nav">
+				<ul class="h_topUl">
+					<li class="cur">
+						<a href="index.html" class="h_dh">首页</a>
+					</li>
+					<li>
+						<div class="dropdown">
+						  <a href="newsPhoto.html" class="h_dh">新闻图片</a>
+						  <div class="dropdown-content" id="newsSecondType">
+						  </div>
+						</div>
+					</li>
+					<li>
+						<div class="dropdown">
+						  <a href="imgLibrary.html" class="h_dh">图库</a>
+						  <div class="dropdown-content">
+						    <a href="imgLibrary.html">区县图片</a>
+						    <a href="javascript:index_nav.searchType('老照片','')">老照片</a>
+						    <a href="javascript:index_nav.searchType('企业图片','')">企业图片</a>
+						    <a href="javascript:index_nav.searchType('创意图片','')">创意图片</a>
+						    <a href="javascript:index_nav.searchType('重要图片','')">重要图片</a>
+						    <a href="javascript:index_nav.searchType('图片故事','')">图片故事</a>
+						  </div>
+						</div>
+					</li>
+					<li>
+						<a href="activities.html" class="h_dh">摄影活动</a>
+					</li>
+					<li>
+						<a href="photographer.html" class="h_dh">摄影师</a>
+					</li>
+					<li id="grapher_type" >
+						<a href="photographer.html?photographer=photographer" class="h_dh">设计师</a>
+					</li>
+					<li>
+						<!-- <a href="increment.html" class="h_dh">增值服务</a> -->
+                         <a href="#" onclick="index_nav.alertCreating()" class="h_dh">增值服务</a>
+					</li>
+					<li>
+						<a href="#" onclick="index_nav.alertCreating()" class="h_dh">视频</a>
+					</li>
+				</ul>
+				<div class="h_excess">
+					<p class="h_point">···</p>
+					<ul class="h_eol">
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="user_qt_ed">
+			<div class="user_info_n" id="account_no" style="display: none;">
+				<a href="#" class="h_gwc"><i class="ico ico1"></i></a>
+				<a id="account" href="javascript:void(0)" onclick="index_nav.open('../login.html')" class="h_login">登录</a>
+				<u>|</u>
+				<a href="javascript:void(0)" onclick="index_nav.open('../register.html')" class="h_sing">注册</a>
+			</div> 
+			<div class="user_info_n" id="account_yes" style="display: none;">
+				<a href="javascript:void(0)" class="h_gwc" onclick="index_nav.car_jump()" ><i class="ico ico1"></i><em id="yes_num">0</em></a>
+				<span class="u_info_img" onclick="index_nav.user_jump()"><img width="26px" height="26px" id="yes_img" src=""></span>
+				<span class="u_info_name" id="yes_name" onclick="index_nav.user_jump()">- -</span>
+				<div class="most_ed_mg">
+						<ul>
+							<li><a href="javascript:void(0)" onclick="index_nav.user_jump()" >个人信息</a></li>
+							<!-- <li><a href="#">我的购买</a></li>
+							<li><a href="#">账号管理</a></li> -->
+							<li><a href="javascript:void(0)"  onclick="index_nav.loginOut()" >退出登录</a></li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="simg clearfix other_w_auto"><img  id="cover" src=""></div>
+<div class="user_info_msg other_w_auto">
+	<div class="w_auto">
+    	<div class="user_img"><img id="actor" src="" width="104" height="104"></div>
+        <div class="user_name"><span id="realName">-</span></div>
+        <div class="user_con"><span id="remark">-</span></div>
+        <div class="user_vt">
+<!--         	<span id="region">重庆市  渝北区</span><u>|</u>
+            <span id="numberOfWorks">作品 299</span><u>|</u>
+            <span id="focusOnNum">关注量 256</span><u>|</u>
+            <span id="viewed">被浏览数 2569</span> -->
+        </div>
+        <!-- <div class="edit_usermsg"><a href="javascript:void(0)" onclick="modifyPassword.initHtml()" class="btn">修改密码</a></div> -->
+    </div>
+</div>
+<div class="user_qh_tab other_w_auto" style="display:none">
+	<a href="javascript:void(0)" onclick="changeTab(this,'production')" id="production" class="cur">我的作品</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'upload')" id="upload">我的上传</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'onShelves')" id="onShelves">作品上下架</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'application')" id="application">申请供稿</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'attention')" id="attention">关注</a>	
+    <a href="javascript:void(0)" onclick="changeTab(this,'collect')" id="collect">收藏</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'buy')" id="buy">我的购买</a>
+    <a href="javascript:void(0)" onclick="changeTab(this,'information')" id="information">消息</a> 
+    <a href="javascript:void(0)" onclick="changeTab(this,'accountmanage')" id="accountmanage">账号管理</a>
+</div>
+	<!-- 我的作品 -->
+	<div class="content_production other_w_auto" style="display:inherit;">
+		<div class="user_boxs">
+			<div class="user_zp_sel">
+				        <div class="w_auto">
+				            <div class="user_zp clearfix myproduction">
+				                <a href="javascript:void(0)" class="cur" data="tp">代表作品</a>
+				                <a href="javascript:void(0)" data="tj">图集</a>
+				            </div>
+				            <div class="u_zp_edit">
+				            	<span>已选择 <span class="nowSelct">0</span>项内容</span>
+				                <span class="ml20"><a href="javascript:void(0)" class="gray9 cancleSelect">取消选择</a></span>
+				                <div class="aboted">
+				                	<a href="javascript:void(0)" onclick="upload.deleteSelectImgs()" ><i class="ico ico48 mr5"></i>删除</a>
+				                    <a href="javascript:void(0)" class="ml20 qxdbz" onclick="upload.cancelMagnumOpus()"  ><i class="ico ico49f mr5"></i>取消为代表作品</a>
+				                    <a href="javascript:void(0)" class="ml20 szdbz" onclick="upload.setMagnumOpus()"  ><i class="ico ico49 mr5"></i>设置为代表作品</a>
+				                   <!--  <a href="javascript:void(0)" class="ml20 szdbz" onclick="upload.shelvesUp()"  ><i class="ico ico38 mr5"></i>上架</a>
+				                    <a href="javascript:void(0)" class="ml20 szdbz" onclick="upload.shelvesDown()"  ><i class="ico ico39 mr5"></i>下架</a> -->
+				                	<a href="javascript:void(0)" class="ml20 returnTj" onclick="upload.returnTj()"  ><i class="ico ico66 mr5"></i>返回</a>
+				               		
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    <div  style="margin-left:50px;" style="display: none;" id="shelves">
+		               	<div class="img_sel_tab" style="margin-top: 15px;">
+					        <a href="javascript:void(0)" onclick="upload.changeTJTp(this,'')" class="cur">全部</a>
+					        <a href="javascript:void(0)" onclick="upload.changeTJTp(this,'0')">未上架</a>
+					        <a href="javascript:void(0)" onclick="upload.changeTJTp(this,'1')">上架</a>
+					    </div>
+					</div>	    		
+			    <div class="w_auto dbzp">
+			        <div class="pic_li my_up_img">
+ 
+			            <ul class="clearfix myUpImgContent">
+			                
+			            </ul>
+			        </div>
+			        
+			        <div id="wdzp_loadPage">
+    				</div>
+		            <!-- <div class="pages" id="productionPages">
+		               
+		            </div> -->
+			    </div>
+			</div>
+	</div>
+    <!-- 我的上传 -->
+    <div class="content_upload other_w_auto">
+    	<div class="user_boxs none_msg pb60">
+			<div class="user_zp_sel">
+		       	<div class="user_zp clearfix">
+		            <a href="javascript:void(0)"  class="cur" onclick="contentUpload.uploadProductionTab(this)">上传作品</a>
+		            <a href="javascript:void(0)"  onclick="contentUpload.uploadSatusTab(this)">上传状态</a>
+		        </div>
+		    </div>
+		     <div class="w_auto uploadSatus">
+		    	<div class="asoci">
+		        	<a href="javascript:void(0)" class="cur"  upload-status="0">待审核</a>
+		            <a href="javascript:void(0)" upload-status="1">已通过</a>
+		            <a href="javascript:void(0)" upload-status="2">未通过</a>
+		        </div>
+		        <div class="cisoao">
+		            <div class="pic_li my_up_img">
+		                <ul class="clearfix uploadStatusImgShow" >
+		                </ul>
+		                <div id="uploadPages">
+		               		 <div class="pages" id="uploadStatusImgPage"></div>
+		                </div>
+		                  
+		            </div>
+		        </div>
+		    </div>
+		    <div class="w_auto uploadProduction">
+		    	<div class="up_img">
+		        	<div class="up_ins" style="display:none">
+		                <dl>
+		                    <dt><span style="color: red">*</span>标题：</dt>
+		                    <dd>
+		                        <input type="text" class="text" placeholder="请输入标题" id="contentUploadTitle">
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt><span style="color: red">*</span>主说明：</dt>
+		                    <dd>
+		                        <textarea class="text" placeholder="填写主说明" style="height:100px" id="contentUploadMainExplain" max=200 maxlength="200"></textarea>
+		                        <span class="zsum">0 / 200</span>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>分说明：</dt>
+		                    <dd>
+		                        <textarea class="text" placeholder="填写分说明" style="height:150px"  id="contentUploadBranchExplain"  max=1000 maxlength="1000"></textarea>
+		                        <span class="zsum">0 / 1000</span>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>图片地点：</dt>
+		                    <dd>
+		                        <input type="text" class="text" placeholder="请输入图片地点"  id="contentUploadPicAddr">
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt><span style="color: red">*</span>摄影作者：</dt>
+		                    <dd>
+		                        <input type="text" class="text" placeholder="请输入摄影作者" id="contentUploadShootAuthor">
+				                 <div class="authorRecord">
+									<a class="btn_c btn_clean">清空历史记录</a>
+								</div>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>拍摄时间：</dt>
+		                    <dd>
+		                        <input type="text" class="text" readonly="readonly" id="chooseDate" placeholder="请输入拍摄时间" id="contentUploadShootTime">
+		                        <i class="ico ico61"></i>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>图片分类：</dt>
+		                    <dd class="clearfix" id="contentUploadPicSort">
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt><span style="color: red">*</span>图片是否公开：</dt>
+		                    <dd>
+		                        <select class="sct" id="picIsPublic">
+		                            <option selected=selected value='1'>公开</option>
+		                             <option value='0'>非公开</option>
+		                        </select>
+		                        <i class="ico ico60"></i>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>布局类型：</dt>
+		                    <dd>
+		                        <select class="sct" id="layoutType">
+		                            <option selected=selected value='0'>横幅</option>
+		                            <option value='1'>竖幅</option>
+		                        </select>
+		                        <i class="ico ico60"></i>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt>关键字：</dt>
+		                    <dd>
+		                        <input type="text" class="text" placeholder="请输入关键字" id="keyWord">
+		                        <i class="ico ico62"></i>
+		                    </dd>
+		                </dl>
+		                <dl>
+		                    <dt></dt>
+		                    <dd>
+		                    	<div class="mt20">
+		                            <a href="javascript:void(0)" class="btn btn_ok" onclick="contentUpload.saveImg()">保存修改</a>
+		                            <a href="javascript:void(0)" class="btn ml10" onclick="contentUpload.clearData()">取消</a>
+		                            <a href="javascript:void(0)" class="btn btn_ok" onclick="contentUpload.submitContUploadImgs()">上传图片</a>
+		                        </div>
+		                    </dd>
+		                </dl>
+		            </div>
+		            <div class="pic_li my_up_img user_update userContentUpload">
+		            	<div class="imgBox contentUploadImgBox">
+
+		            	</div>
+		                <div class="inputFile">
+		                	<div class="mino-box">
+		                        <samp class="up_adimg">点击上传图片</samp>
+		                    </div>
+		                    <form action="" method="post" enctype="multipart/form-data">
+		                    	<input type="file" onchange="contentUpload.userUpImg(this,'upLoadImg')" class="comFileBtn"  accept="image/*"/>
+		                    </form>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+    <!-- 申请供稿-->
+    <div class="content_application other_w_auto">
+		<div class="user_boxs">
+			<!-- 基本信息 -->
+		    <div class="application_basic">
+		    	<div class="w_auto">
+			    	<div class="step">
+			        	<ul class="clearfix">
+			            	<li class="cur"><span>1、填写基本信息</span></li>
+			                <li><span>2、填写验证信息</span></li>
+			                <li><span>3、结果审核</span></li>
+			            </ul>
+			        </div>
+			    	<div class="inboxn">
+			        	<p class="in_title">供稿摄影师申请</p>
+			            <p class="mt10 gray9">请您正确填写，便于我们给您寄礼品、账单等</p>
+			            <div class="mt50">
+			                <div class="in_text">
+			                    <span class="itic">真实姓名</span>
+			                    <div class="intxts"><input name="aplInfoBasicRealName" type="text" class="text" placeholder="请输入真实姓名"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">姓名拼音(大写)</span>
+			                    <div class="intxts"><input name="aplInfoBasicNameSpell" type="text" class="text" placeholder="请输入姓名拼音"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">手机号码</span>
+			                    <div class="intxts"><input  name="aplInfoBasicCellPhone" type="text" class="text" placeholder="请输入手机号码"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">性别</span>
+			                    <div class="pt10">
+			                    <span class="apl_sex selt" data="1"><i class="ico ico56 mr5"></i>男</span>
+			                    <span class="apl_sex" data="0"><i class="ico ico55 mr5"></i>女</span>
+			                    </div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">所属公司</span>
+			                    <div class="intxts"><input  name="aplInfoBasicCompany"  type="text"  class="text" placeholder="请输入所属公司"></div>
+			                    <div class="ts">如果您不属于任何公司，此项选择个人</div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">上传样片</span>
+			                    <div class="pic_li my_up_img user_update" style="height:120px;min-height:120px;">
+			                    	<div class="aplImgBox" style="float:left">
+			                    	</div>
+									<div class="inputFile aplInputFile" style="width:110px;height:110px;display: inline-block;">
+						                	<div class="mino-box" style="width:100px;height:100px">
+						                        <samp class="up_adimg">点击上传图片</samp>
+						                    </div>
+						                    <form action="" method="post" enctype="multipart/form-data">
+						                    	<input type="file" onchange="application.upSampleImg(this,'upLoadImg')" class="comFileBtn"  accept="image/*"/>
+						                    </form>
+						             </div>
+				                    
+	<!-- 			                    <div class="minos">
+				                    	<p><i class="ico ico57"></i></p>
+				                        <p class="mt10">上传本地作品</p>
+				                        <p class="mt10 f12 gray9">请提供20张原创照片,支持格式jpg/gif/png图片，每张小于10M</p>
+				                    </div> -->
+				                </div>
+			                 </div>
+			            </div>
+			        </div>
+			        <div class="svtsd">
+			            <button class="btn btn_ok" onclick="application.submitBasicInfo()">下一步</button>
+			            <a href="javascript:void(0)" class="btn ml20" onclick="application.saveBasicInfo()">保存</a>
+			        </div>
+			    </div>
+			</div>
+			<!-- 验证信息 -->
+			<div class="application_verify">
+			   <div class="w_auto">
+			    	<div class="step">
+			        	<ul class="clearfix">
+			            	<li><span>1、填写基本信息</span></li>
+			                <li  class="cur"><span>2、填写验证信息</span></li>
+			                <li><span>3、结果审核</span></li>
+			            </ul>
+			        </div>
+			    	<div class="inboxn">
+			        	<p class="in_title">填写验证信息</p>
+			            <p class="mt10 gray9">请正确填写合同信息，并读摄影作品委托代理协议。</p>
+			            <div class="mt50">
+			          	  <div class="in_text">
+			                    <span class="itic">供稿人类型</span>
+			                    <div class="selts fl">
+			                    	<select class="sect" id="personType">
+			                        	<option value="1">摄影师</option>
+			                        	<option value="2">设计师</option>
+			                        </select>
+			                    </div>
+			                    
+			                </div> 
+			                <div class="in_text">
+			                    <span class="itic">身份证号</span>
+			                    <div class="intxts"><input name="vfctIdentityCard" type="text" class="text" placeholder="请输入身份证号"></div>
+			                </div>
+			                <div class="in_text clearfix">
+			                    <span class="itic">身份证正反面</span>
+			                    <div class="minos fl">
+			                    	<div class="mino-box">
+			                    		<p><i class="ico ico57"></i></p>
+			                        	<p class="mt10">上传正面</p>
+			                    	</div>
+			                    	<div class="mino-img">
+			                    		<img src="" id="frontImg"/>
+			                    	</div>
+			                        <form action="" method="post" enctype="multipart/form-data">
+			                        	<input type="file" onchange="application.verificationUploadImg(this,'frontImg')" class="comFileBtn"  accept="image/*"/>
+			                        </form>
+			                    </div>
+			                    <div class="minos fl ml20">
+			                    	<div class="mino-box">
+			                    		<p><i class="ico ico57"></i></p>
+			                        	<p class="mt10">上传背面</p>
+			                    	</div>
+			                    	<div class="mino-img">
+			                    		<img src="" id="behindeImg"/>
+			                    	</div>
+			                        <form action="" method="post" enctype="multipart/form-data">
+			                        	<input type="file" onchange="application.verificationUploadImg(this,'behindeImg')" class="comFileBtn"  accept="image/*"/>
+			                        </form>
+			                    </div>
+			                </div>
+<!-- 			            <div class="in_text in_text2 clearfix">
+			                    <span class="itic">通信地址</span>
+			                    <div class="selts fl">
+			                    	<select class="sect">
+			                        	<option>重庆市</option>
+			                        	<option>湖南省</option>
+			                        	<option>四川省</option>
+			                        </select>
+			                        <i class="ico ico58"></i>
+			                    </div>
+			                    <div class="selts fl">
+			                    	<select class="sect">
+			                        	<option>渝北区</option>
+			                        	<option>渝中区</option>
+			                        </select>
+			                        <i class="ico ico58"></i>
+			                    </div>
+			                </div> -->
+				            <div class="in_text">
+								<span class="itic">所在地区</span>
+								<div class="intxts">
+									<input type="text" name="region" style="margin-bottom: 5px;"
+										class="text" placeholder="请输入所在地区">
+								</div>
+							</div>
+			               <div class="in_text">
+			                    <span class="itic">通信地址</span>
+			                    <!-- <div class="intxts"  style="width:180px;display:inline-block;">
+			                    	<input type="text" name="addrProvince" class="text" style="width:160px" placeholder="请输入省份">
+			                    </div>
+			                    <div class="intxts"  style="width:180px; display:inline-block;margin-left:13px">
+			                    	<input type="text"  name="addrCity"  class="text" style="width:160px;"  placeholder="请输入区县">
+			                    </div> -->
+			                    <div class="intxts"><input type="text" name="address" class="text" placeholder="请输入通讯地址"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">邮政编码</span>
+			                    <div class="intxts"><input type="text" name="postcode" class="text" placeholder="请输入邮政编码"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">银行卡号</span>
+			                    <div class="intxts"><input type="text" name="bankCard" class="text" placeholder="请输入银行卡号"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">银行用户名</span>
+			                    <div class="intxts"><input type="text" name="bankUserName"  class="text" placeholder="请输入银行用户名"></div>
+			                </div>
+			                <div class="in_text">
+			                    <span class="itic">开户行名称</span>
+			                    <div class="intxts"><input type="text" name="bankName" class="text" placeholder="请输入开户行名称"></div>
+			                </div>
+			                
+			                <div class="in_text">
+			                    <span class="itic">上传银行卡照片</span>
+			                    <div class="minos">
+			                    	<div class="mino-box">
+			                    		<p><i class="ico ico57"></i></p>
+			                        	<p class="mt10">上传照片</p>
+			                    	</div>
+			                    	<div class="mino-img">
+			                    		<img src="" id="BankCardImg"/>
+			                    	</div>
+			                        <form action="" method="post" enctype="multipart/form-data">
+			                        	<input type="file" onchange="application.verificationUploadImg(this,'BankCardImg')" class="comFileBtn"  accept="image/*"/>
+			                        </form>
+			                    </div>
+			                    <div class="mt15 gray9">温馨提示：为了使您的账号激活后能够获得图片上传和相应的访问授权，请您阅读
+			                    <a href="javascript:void(0)" class="btn ml10" onclick="upload.showContract()">《摄影作品委托代理协议》</a>。</div>
+			                    <div class="mt15 vfctToggleRadio">
+			                    	<span class="radioLeft raCur" data="ty"><i class="ico ico56 mr5"></i>同意</span>
+			                        <span class="radioRight ml20" data="bty"><i class="ico ico55 mr5"></i>不同意</span>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="svtsd vfctBtn">
+			            <button class="btn btn_ok" onclick="application.submitVerification()">提交</button>
+			            <!-- <a href="javascript:void(0)" class="btn ml20" onclick="application.saveVerification()">保存</a> -->
+			        </div>
+			    </div>
+			</div>
+			<!-- 审核结果 -->
+			<div class="application_result">
+		    	<div class="w_auto">
+			    	<div class="step">
+			        	<ul class="clearfix">
+			            	<li ><span>1、填写基本信息</span></li>
+			                <li><span>2、填写验证信息</span></li>
+			                <li class="cur"><span>3、结果审核</span></li>
+			            </ul>
+			        </div>
+			        <div class="inboxn">
+			            <p class="mt10 auditResult"></p>
+			        </div>
+			       <div class="svtsd auditResultBtn">
+			            
+			        </div>
+			     </div>   
+			</div>
+		</div>
+    </div>
+    <!-- 关注 -->
+    <div class="content_attention other_w_auto">
+		<div class="sys_lis_ur">
+			<div class="w_auto" id="pAndD_list">
+				<!--  -->
+			</div>
+			<div class="pages" id="pAndD_pages">
+			               
+			</div>
+		</div>
+	</div>
+    <!-- 收藏 -->
+    <div class="content_collect other_w_auto">
+		<!-- <div class="ed_jximg ed_jximg2" id="pic_opus">
+			<div class="img_prt">
+				<ul class="clearfix" id="opus_list">
+				</ul>
+			</div>
+		</div> -->
+		<div class="user_boxs">
+			<div class=" dbzp">
+				<div class="pic_li my_up_img">
+					<ul class="clearfix" id="opus_list">
+						
+					</ul>
+				</div>
+				<div class="pages" id="opus_pages">
+			               
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- 我的购买-->
+    <div class="content_buy other_w_auto">
+    	<div class="my_paym">
+			<div class="w_auto">
+		    	<div class="userpay">
+		        	<div class="gm_selt">
+		            	<div class="gmbox">
+		                	<p class="itic">筛选时间：</p>
+		                    <div class="selts ">
+		                        <select class="sect" id="buysxsj">
+		                            <option value="all">全部</option>
+		                            <option value="today">今天</option>
+		                            <option value="yesterday">昨天</option>
+		                            <option value="seven">前7天</option>
+		                            <option value="thirty">前30天</option>
+		                            <option value="threeMonth">三个月</option>
+		                            <option value="sixMonth">半年</option>
+		                        </select>
+		                        <i class="ico ico58"></i>
+		                    </div>
+		                </div>
+		                <div class="gmbox">
+		                	<p class="itic">关键词或ID：</p>
+		                    <div class="intxts"><input type="text" id="buykeyword" class="text" placeholder="请输入关键词或ID："></div>
+		                </div>
+		                <div class="gmbox">
+		                	<p class="itic">时间段：</p>
+		                    <div class="intxts"><input type="text" class="text" readonly="readonly" id="startTime" placeholder="开始时间"><i class="ico ico61"></i></div>
+		                    <div class="intxts"><input type="text" class="text" readonly="readonly" id="endTime" placeholder="结束时间"><i class="ico ico61"></i></div>
+		                </div>
+		                <div class="gosmtis mt20"><button class="btn btn_ok" onclick="buy.sureFilter(1,true)">过滤</button></div>
+					</div>
+					<div id="userpay">
+
+					</div>
+		            <!-- <div class="jzover"><span>已加载全部数据</span></div> -->
+				</div>
+				<div class="pages" id="userpay_pages">
+						
+				</div>
+		    </div>
+		</div>
+    	
+    </div>
+    <!-- 消息-->
+    <div class="content_information other_w_auto">
+    	<div class="w_auto">
+	    	<p class="f16 gray9">我的消息</p>
+	        <div class="mglits mt20">
+	        	<ul id="myMess_ul">
+	            	<!-- <li>
+	                	<i class="ico ico65"></i>
+	                    <div class="misa">
+	                    	<span>活动公告</span>
+	                        <span>06/27 15:34</span>
+	                    </div>
+	                    <div class="misc">
+	                    	留给你炫技的时间不多了，一汽-大众全新一代宝来主题设计征集仅剩3天咯！我的重生，由你来定义。在你的艺术视角下，全新的我会是怎样？
+							势能满格，就该大胆释放。色彩碰撞出无限想象，视觉冲击出天马行空~在你的画笔下，全新一代宝来更加完美演绎艺术与技术的交融结合~
+							添睛之笔，定出于你手！收官在即，最后3天请“即刻”拿出你的创意来技压群雄惊艳四座吧！
+	                    </div>
+	                </li> -->
+	            </ul>
+	        </div>
+	    </div>
+	    <div class="pages" id="messagePages">
+			               
+		</div>
+    </div>
+    <!-- 账号管理-->
+    <div class="other_w_auto">
+       <div id="aniu" class="user_zp_sel" style="display: none;text-align: center;margin-top: 33px;color: #333">
+         <div class="user_zp clearfix myproduction">
+	        <a href="javascript:void(0)" class="cur" onclick="accountmanage.initHtml()" class="btn">个人信息</a>
+			<a href="javascript:void(0)" onclick="modifyPassword.initHtml()" >修改密码</a>
+		 </div>
+	  </div>	   
+    <div class="content_accountmanage other_w_auto">
+		    <div class="w_auto">
+		    	<div class="inboxn">
+		        	<p class="in_title">修改个人信息</p>
+		            <!-- <p class="mt10 gray9">昵称修改一周之内只能修改一次，请谨慎修改</p> -->
+		            <div class="mt50">
+		                <div class="in_text">
+		                    <span class="itic">昵称</span>
+		                    <div class="intxts"><input id="atmngNickName" type="text" class="text" placeholder="请输入昵称"></div>
+						</div>
+						
+		                <div class="in_text">
+		                    <span class="itic">头像</span>
+		                    <div class="txmsgt">
+		                    	<span class="img"><img src="" id="headImg"></span>
+		                        <a href="javascript:void(0)" class="seked">
+		                        	选择文件
+		                        	<form action="" method="post" enctype="multipart/form-data">
+			                        	<input type="file" onchange="accountmanage.uploadImg(this,'headImg')" class="comFileBtn" accept="image/*">
+			                        </form>
+		                        </a>
+		                    </div>
+		                </div>
+		               <div class="in_text">
+		                    <span class="itic">封面</span>
+		                    <div class="txmsgt">
+		                    	<span class="img"><img src="" id="atmngcover"></span>
+		                        <a href="javascript:void(0)" class="seked">
+		                        	选择文件
+		                        	<form action="" method="post" enctype="multipart/form-data">
+			                        	<input type="file" onchange="accountmanage.uploadImg(this,'atmngcover')" class="comFileBtn" accept="image/*">
+			                        </form>
+		                        </a>
+		                    </div>
+		                </div>
+		                <div class="in_text">
+		                    <span class="itic">性别</span>
+		                    <div class="pt10 toggleRadio">
+		                        <span class="atmng_sex radioMan raCur selt" data="man"><i class="ico ico56 mr5"></i>男</span>
+		                        <span class="atmng_sex ml20 radioWoman" data="wman" ><i class="ico ico55 mr5"></i>女</span>
+		                    </div>
+		                </div>
+		                <div class="in_text">
+		                    <span class="itic">手机号码</span>
+		                    <div class="intxts"><input id="atmngCellPhone" type="text" class="text" placeholder="请输入手机号码"></div>
+		                </div>
+		                <div class="in_text">
+		                    <span class="itic">关于您</span>
+		                    <div class="tareabx">
+		                    	<textarea class="tarea" id="remarkSelf" placeholder=""></textarea>
+		                    </div>
+		                </div>
+		            </div>
+		        <div class="svtsd">
+		            <button class="btn btn_ok" onclick="accountmanage.savaAccountManage()">保存</button>
+		            <a href="#" class="btn ml20">取消</a>
+		        </div>
+		    </div>
+		</div>
+    </div>
+    </div>
+<div class="content_onShelves other_w_auto vcont">
+			<div class="ed_gkp">
+				<div class="ed_nkl clearfix">
+					<div class="nk_sel nk_sel2">
+						<select class="custom_select" id="is_shelves" >
+							<option value="">全部</option>
+							<option value="0">待上架</option>
+							<option value="1">待下架</option>
+						</select>
+						<i class="ico ico60"></i>
+					</div>
+					<div class="ed_nkl search clearfix">
+						<div class="ser_box">
+							<input type="text" class="text" placeholder="输入关键字或图片ID"  id="searchW_words">
+							<i class="ico ico8" onclick="loadMyPhoto()"></i>
+						</div>
+					</div>
+					<div class="ed_msl">
+						<a onclick="beacthUp()" id="beacthUp" style="display: none;">上架</a>
+						<a onclick="beacthJg()" id="beacthJg" style="display: none;">定价</a>
+						<a onclick="beacthDown()" id="beacthDown" style="display: none;">下架</a>
+					</div>
+				</div>
+			</div>
+			<div id="TableContainer" style="width: 98%;margin-left: 1%;"></div>
+		
+			<div class="page">
+				<div style="float: left;">
+					<span>共<span id="total_records">200</span>条记录</span>
+					<span>每页显示</span>
+					<select class="sel" id="page_size" onchange="page_size_change()"> 
+						<option value="1">1</option>
+						<option value="5">5</option>
+						<option value="10" selected="selected">10</option>
+						<option value="20">20</option>
+						<option value="50">50</option>
+					</select>
+					<i class="ico ico60" style="margin-left: -25px;"></i>
+					<span>条记录</span>
+				</div>
+				<div style="float: right;">
+					<a href="#" onclick="first_page()">首页</a> 
+					<a href="#" onclick="last_page()">上一页</a> 
+					<span>当前第<span id="this_page">1</span>页</span>
+					<span>共<span id="total_page">200</span>页</span>
+					<a href="#" onclick="next_page()">下一页</a> 
+					<a href="#" onclick="end_page()">尾页</a>
+					<input type="text" class="text" id="go_page_text">
+					<button class="go" onclick="go_page()">GO</button>
+				</div>
+			
+			</div>
+		</div>
+
+<div class="faut w_auto">
+	<div class='comWidth'>
+	 	<div class="wer">
+	        <p><img src="../project/images/er_03.jpg" width="100" height="100"></p>
+	        <p class="mt5">微信公众号</p>
+	    </div>
+	    <ul class="clearfix">
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">主要产品</div>
+	                <div class="ci">
+	                    <!--  <a href="">新闻图片</a>  -->
+<!-- 	                    <a href="photographer.html">重庆摄影师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','','')">重庆区县</a>
+	                    <a href="photographer.html?photographer=photographer">重庆设计师</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','老照片','')">重庆老照片</a>
+	                    <a href="javascript:void(0)" onclick="index_nav.search_a('','企业图片','')">重庆企业</a> -->
+	                    <p class="cp">新闻图片</p> 
+	                    <p class="cp">重庆摄影师</p> 
+	                    <p class="cp">重庆区县</p> 
+	                    <p class="cp">重庆设计师</p> 
+	                    <p class="cp">重庆老照片</p> 
+	                    <p class="cp">重庆企业</p> 
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">增值服务</div>
+	                <div class="ci">
+	                   <!--  <a href="#">定制拍摄</a>
+	                    <a href="#">法律维权</a>
+	                    <a href="#">摄影活动</a>
+	                    <a href="#">视觉策划</a>
+	                    <a href="#">画册设计</a>
+	                    <a href="#">摄影节庆</a> -->
+	                    <p class="cp">定制拍摄</p> 
+	                    <p class="cp">法律维权</p> 
+	                    <p class="cp">摄影活动</p> 
+	                    <p class="cp">视觉策划</p> 
+	                    <p class="cp">画册设计</p> 
+	                    <p class="cp">摄影节庆</p> 
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="ftc">
+	                <div class="ti">联系我们</div>
+	                <div class="ci">
+	                    <p>邮箱：2230623082@qq.com</p>
+	                    <p>电话：023-6390 7227</p>
+	                </div>
+	            </div>
+	        </li>
+	    </ul>
+   </div>
+</div>
+<div class="footer w_auto">
+    版权所有©重庆日报社 运营方©重庆日报社 渝ICP备17015920号-2
+</div>
+<div id="ModalAlert" class="ui_mask">
+			<div class="ui_box" style="opcity:0.5">
+				<div class="ui_con hjser"></div>
+				<div class="ui_btj"></div>
+			</div>
+</div>
+<script type="text/javascript" src="../project/js/jquery.min.js" ></script>
+<script type="text/javascript" src="../../plug/js/jquery.cookie-1.3.js" ></script>
+<script type="text/javascript" src="../project/js/jquery.page.js" ></script>
+<!-- 顶部导航 和 部分公共方法 -->
+<script type="text/javascript" src="../project/js/public/public.js" ></script>
+<script type="text/javascript" src="../js/html/user_uploadImg/user_uploadImg.js" ></script>
+<script type="text/javascript" src="../project/js/laydate.js" ></script>
+<!-- 我的关注加载列表 -->
+<script type="text/javascript" src="../js/html/user_uploadImg_content.js" ></script>
+<script type="text/javascript" src="../js/html/photographer.js"></script>
+<!-- 我的收藏加载列表 -->
+<script type="text/javascript" src="../js/html/user_uploadImg_collect.js" ></script>
+<!-- 我的购买加载列表 -->
+<script type="text/javascript" src="../js/html/user_uploadImg_car.js" ></script>
+<!-- 处理数据的公共方法 -->
+<script type="text/javascript" src="../util/js/getUtil.js"></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../layer/layer.js"></script>
+<!-- 首页页面效果 -->
+<script type="text/javascript" src="../js/html/index_nav.js" ></script>
+<!-- 通用搜索功能 功能 -->
+<script type="text/javascript" src="../js/in_search.js"></script>
+<!-- 申请供稿 -->
+<script type="text/javascript" src="../js/html/user_uploadImg/application.js"></script>
+<!-- 我的上传  -->
+<script type="text/javascript" src="../js/html/user_uploadImg/contentUpload.js"></script>
+<!-- 修改个人资料 -->
+<script type="text/javascript" src="../js/html/user_uploadImg/accountmanage.js"></script>
+<!-- 修改密码-->
+<script type="text/javascript" src="../js/html/user_uploadImg/modifyPassword.js"></script>
+<!-- 我的作品-->
+<script type="text/javascript" src="../js/html/user_uploadImg/upload.js"></script>
+<!-- 作品管理上下架-->
+<script src="../project/table/esayTable.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../plug/alert/esayAlert.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/html/photoManage/pageBtn.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../js/html/photoManage/photoManage.js"></script>
+
+<script type="text/javascript" >
+    index_nav.init();//导航 
+</script>
+
+</body>
+</html>

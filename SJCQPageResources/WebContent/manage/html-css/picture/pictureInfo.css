@@ -1,0 +1,46 @@
+/*图片详情css*/
+body{
+	background-color: rgba(251, 251, 251, 0.3);
+}
+.panel-heading{
+	text-align: center;
+}
+#person_info_div {
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+#person_info_div table{
+	table-layout: fixed;
+	word-wrap:break-word;
+}
+
+#person_info_div table tr td {
+	line-height: 20px;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+#person_info_div .td-left{
+	text-align:right;
+	width: 12%;
+}
+
+#person_info_div .td-right{
+	padding-left: 0px;
+}
+
+#person_info_div .auditList th{
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+#person_info_div .auditList td{
+	padding: 0px 10px;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+
+.auditList .remark{
+	width:400px;
+	overflow: hidden;
+}

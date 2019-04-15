@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>图片审核管理页</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+<link href="../../html-css/broadCast/broadCastManage.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<script type="text/javascript" src="../../html-js/broadCast/broadCastManage.js"> </script>
+</head>
+<body>
+	<div id="broadCast_content" class="broadCast_content">
+		<div id="search-content">
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;" id="typeText">关键字：</label>
+				<input type="text" class="form-control report_data_table_td" id="searchName">
+			</div>
+			<!-- 类型：1、首页；2、图片；3、区县；4、企业；5、首页区县小图轮播；6、老照片；7、区县详情页轮播 -->
+			<div class="search-condition-div" style="display: none;">
+				<label style="display: inline; position: relative;">轮播类型：</label>
+				<select id="broTypeSel" style="width: 150px; " class="select_width">
+					<option value="">全部</option>
+					<option value="1" selected="selected">首页</option>
+					<option value="2">图片</option>
+					<option value="3">区县</option>
+					<option value="4">企业</option>
+					<option value="6">老照片</option>
+					<option value="5">首页区县轮播</option>
+					<option value="7">区县详情页轮播</option>
+					<option value="8">首页企业轮播</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<label style="display: inline; position: relative;">启用状态：</label>
+				<select id="isUsedSel" style="width: 150px;" class="select_width">
+					<option value="">全部</option>
+					<option value="0">停用</option>
+					<option value="1">启用</option>
+				</select>
+			</div>
+			<div class="search-condition-div">
+				<input type="button" value="检索" class="report_data_table_but btn" onclick="searchData()" />
+				<input type="button" value="新增" class="report_data_table_but btn" onclick="addInfo()"/>
+				<input type="button" value="删除" class="report_data_table_but btn btn-danger" onclick="batchDel()"/>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="broadCastDataTablePre">
+			<table id="broadCastDataTable" class="table-bordered table-hover"></table>
+		</div>
+	</div>
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+			<h3 id="myModalLabel"></h3>
+		</div>
+		<div class="modal-body"></div>
+		<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

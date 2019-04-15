@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>图片详情</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link href="../../html-css/auditManage/photoAddOrUpdateEditEnd.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="../../../vision/project/css/base.css"/>
+<link rel="stylesheet" href="../../../vision/project/css/style.css"/>
+<link rel="stylesheet" href="../../../vision/project/css/modifyImg.css"/>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../vision/project/js/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../vision/project/js/public/public.js" ></script>
+<script type="text/javascript" src="../../../vision/project/js/laydate.js" ></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>	
+<script type="text/javascript" src="../../../vision/js/in_search.js"></script>
+<script type="text/javascript" src="../../html-js/auditManage/photoAddOrUpdateEditDetail.js"></script>
+</head>
+<body>
+<div id="person_info_content">
+	<div  id="pic_info">
+		<div class="row-fluid" id="essearch1">
+			<div class="span12">
+				<div class="rightReader" id="rightReader">
+					<img id="picLyljm" src="">
+				</div>
+				<div class="separateDiv"></div>
+				<div class="middleContent" id="middleContent">
+					<p style="margin:10px 10px 10px;text-align:left;">原信息：</p>
+					<div class="clearfix">
+                        <div class="up_ins fl">
+                            <dl>
+                                <dt>标题：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picMc" placeholder="请输入标题" >
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>主说明：</dt>
+                                <dd>
+                                    <textarea class="text" placeholder="填写主说明" id="picRemark" style="height:100px" ></textarea>
+                                    <span class="zsum">0 / 200</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>分说明：</dt>
+                                <dd>
+                                    <textarea class="text" placeholder="填写分说明" id="picFRemark" style="height:150px" ></textarea>
+                                    <span class="zsum">0 / 1000</span>
+                                </dd>
+                            </dl>
+                             <dl>
+                                <dt>图片地点：</dt>
+                                <dd>
+                                    <input type="text" id="picDd" class="text" placeholder="请输入图片地点" >
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>摄影作者：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSyz" placeholder="请输入摄影作者" >
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>拍摄时间：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSysj" placeholder="请输入拍摄时间" >
+                                    <i class="ico ico61"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片分类：</dt>
+                                <dd class="clearfix"  id="contentUploadPicSort" >
+
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片是否公开：</dt>
+                                <dd>
+     		                        <select class="sct" id="picMj" >
+		                            <option selected=selected value='1'>公开</option>
+		                             <option value='0'>非公开</option>
+		                       		 </select>
+		                       		 <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>布局类型：</dt>
+                                <dd>
+			                        <select class="sct" id="picType" > 
+			                            <option selected=selected value='0'>横幅</option>
+			                            <option value='1'>竖幅</option>
+			                        </select>
+			                        <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>关键字：</dt>
+                                <dd>
+			                        <input type="text" class="text" placeholder="请输入关键字" id="picGjz" >
+			                        <i class="ico ico62"></i>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+				</div>
+				<div class="separateDiv"></div>
+				<div class="middleContent1 " id="middleContent1">
+					<p style="margin:10px 10px 10px;text-align:left;">编辑修改信息：</p>
+					<div class="clearfix">
+                        <div class="up_ins fl">
+                            <dl>
+                                <dt>标题：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picMcOld"  placeholder="请输入标题">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>主说明：</dt>
+                                <dd>
+                                    <textarea class="text" placeholder="填写主说明"   id="picRemarkOld" style="height:100px"></textarea>
+                                    <span class="zsum">0 / 200</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>分说明：</dt>
+                                <dd>
+                                    <textarea class="text" placeholder="填写分说明"   id="picFRemarkOld" style="height:150px"></textarea>
+                                    <span class="zsum">0 / 1000</span>
+                                </dd>
+                            </dl>
+                             <dl>
+                                <dt>图片地点：</dt>
+                                <dd>
+                                    <input type="text" id="picDdOld"   class="text" placeholder="请输入图片地点">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>摄影作者：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSyzOld" placeholder="请输入摄影作者"   >
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>拍摄时间：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSysjOld" placeholder="请输入拍摄时间"  >
+                                    <i class="ico ico61"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片分类：</dt>
+                                <dd class="clearfix"  id="contentUploadPicSortOld"  >
+
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片是否公开：</dt>
+                                <dd>
+     		                        <select class="sct" id="picMjOld"  >
+		                            <option selected=selected value='1'>公开</option>
+		                             <option value='0'>非公开</option>
+		                       		 </select>
+		                       		 <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>布局类型：</dt>
+                                <dd>
+			                        <select class="sct" id="picTypeOld"  >
+			                            <option selected=selected value='0'>横幅</option>
+			                            <option value='1'>竖幅</option>
+			                        </select>
+			                        <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>关键字：</dt>
+                                <dd>
+			                        <input type="text" class="text" placeholder="请输入关键字" id="picGjzOld"  >
+			                        <i class="ico ico62"></i>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="separateDiv"></div>
+				<div class="middleContent1 " id="middleContent2">
+					<p style="margin:10px 10px 10px;text-align:left;">审核人修改信息：</p>
+					<div class="clearfix">
+                        <div class="up_ins fl">
+                            <dl>
+                                <dt>标题：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picMcEnd" placehEnder="请输入标题">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>主说明：</dt>
+                                <dd>
+                                    <textarea class="text" placehEnder="填写主说明" id="picRemarkEnd" style="height:100px"></textarea>
+                                    <span class="zsum">0 / 200</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>分说明：</dt>
+                                <dd>
+                                    <textarea class="text" placehEnder="填写分说明" id="picFRemarkEnd" style="height:150px"></textarea>
+                                    <span class="zsum">0 / 1000</span>
+                                </dd>
+                            </dl>
+                             <dl>
+                                <dt>图片地点：</dt>
+                                <dd>
+                                    <input type="text" id="picDdEnd" class="text" placehEnder="请输入图片地点">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>摄影作者：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSyzEnd" placehEnder="请输入摄影作者">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>拍摄时间：</dt>
+                                <dd>
+                                    <input type="text" class="text" id="picSysjEnd" placehEnder="请输入拍摄时间">
+                                    <i class="ico ico61"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片分类：</dt>
+                                <dd class="clearfix"  id="contentUploadPicSortEnd">
+
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>图片是否公开：</dt>
+                                <dd>
+     		                        <select class="sct" id="picMjEnd">
+		                            <option selected=selected value='1'>公开</option>
+		                             <option value='0'>非公开</option>
+		                       		 </select>
+		                       		 <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>布局类型：</dt>
+                                <dd>
+			                        <select class="sct" id="picTypeEnd">
+			                            <option selected=selected value='0'>横幅</option>
+			                            <option value='1'>竖幅</option>
+			                        </select>
+			                        <i class="ico ico60"></i>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>关键字：</dt>
+                                <dd>
+			                        <input type="text" class="text" placehEnder="请输入关键字" id="picGjzEnd">
+			                        <i class="ico ico62"></i>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div id="tj_info">
+			<div class="row-fluid" id="essearch1">
+				<div class="span12">
+
+					<div class="rightReader" id="rightReader">
+						<img id="tjLyljm" src="">
+					</div>
+					<div class="separateDiv"></div>
+					<div class="middleContent" id="middleContent0">
+						<p style="margin:10px 10px 10px;text-align:left;">原信息：</p>
+					 		<div class="up_ins fl">
+	                            <dl>
+	                                <dt>图集名称：</dt>
+	                                <dd>
+	                                    <input type="text" class="text" id="tjMc" placeholder="请输入图集名称" >
+	                                </dd>
+	                            </dl>
+	                            <dl>
+	                                <dt>主说明：</dt>
+	                                <dd>
+	                                    <textarea class="text" placeholder="填写图集名称" id="tjRemark" style="height:100px" ></textarea>
+	                                    <span class="zsum">0 / 200</span>
+	                                </dd>
+	                            </dl>
+	                       </div>
+					</div>
+					<div class="separateDiv"></div>
+					<div class="middleContent1 " id="middleContent1">
+						<p style="margin:10px 10px 10px;text-align:left;">编辑修改信息：</p>
+						<div class="up_ins fl">
+	                            <dl>
+	                                <dt>图集名称：</dt>
+	                                <dd>
+	                                    <input type="text" class="text" id="tjMcOld" placeholder="请输入图集名称"  >
+	                                </dd>
+	                            </dl>
+	                            <dl>
+	                                <dt>主说明：</dt>
+	                                <dd>
+	                                    <textarea class="text" placeholder="填写图集名称" id="tjRemarkOld" style="height:100px"  ></textarea>
+	                                    <span class="zsum">0 / 200</span>
+	                                </dd>
+	                            </dl>
+	                       </div>
+					</div>
+					<div class="separateDiv"></div>
+					<div class="middleContent1 " id="middleContent22">
+						<p style="margin:10px 10px 10px;text-align:left;">审核人修改信息：</p>
+						<div class="up_ins fl">
+	                            <dl>
+	                                <dt>图集名称：</dt>
+	                                <dd>
+	                                    <input type="text" class="text" id="tjMcEnd" placeholder="请输入图集名称">
+	                                </dd>
+	                            </dl>
+	                            <dl>
+	                                <dt>主说明：</dt>
+	                                <dd>
+	                                    <textarea class="text" placeholder="填写图集名称" id="tjRemarkEnd" style="height:100px"></textarea>
+	                                    <span class="zsum">0 / 200</span>
+	                                </dd>
+	                            </dl>
+	                       </div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	<!-- 操作按钮 -->
+	<!-- <div style="margin-top:30px;text-align:center;">
+		<input type="button" value="提交修改" class="report_data_table_but btn btn-warning" onclick="taskSubmit();">
+		<input type="hidden" id="picXh" value="">
+		<input type="hidden" id="tjXh" value="">
+	</div> -->
+	<!-- 图集图片列表 -->
+	<div id="tj_pic_list"   >
+	    <div class="pic_sel_od" >
+	        <div class="w_auto" style="font-size: 28px;">
+	            图片列表
+	        </div>
+	    </div>
+	    <div class="pic_sel_ed">
+	        <div class="w_auto">
+	            <div class="pic_li my_up_img">
+	                <ul class="clearfix" id="tj_pic">
+	                    
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+ <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				<h3 id="myModalLabel"></h3>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

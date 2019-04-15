@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>图片详情</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link href="../../html-css/photographyActive/activePicEdit.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="../../../vision/project/css/base.css"/>
+<link rel="stylesheet" href="../../../vision/project/css/style.css"/>
+<link rel="stylesheet" href="../../../vision/project/css/modifyImg.css"/>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../../themeTemplate/black/css/content-style.css" type="text/css"  id="contentStyle">
+<script type="text/javascript" src="../../../vision/project/js/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../vision/project/js/public/public.js" ></script>
+<script type="text/javascript" src="../../../vision/project/js/laydate.js" ></script>
+<!-- layer 弹出框 -->
+<script type="text/javascript" src="../../../layer/layer.js"></script>
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>	
+<script type="text/javascript" src="../../../vision/js/in_search.js"></script>
+<script type="text/javascript" src="../../html-js/photographyActive/activePicEdit.js"></script>
+</head>
+<body>
+<div class="eidt_content">
+			<div class="pic_position">
+				<img id="picLyljm" src="">
+			</div>
+			<div class="content_position">
+				<div class="clearfix">
+                       <div class="up_ins fl">
+                           <dl>
+                               <dt>标题：</dt>
+                               <dd>
+                                   <input type="text" class="text" id="picMcEnd" placehEnder="请输入标题">
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>主说明：</dt>
+                               <dd>
+                                   <textarea class="text" placehEnder="填写主说明" id="picRemarkEnd" style="height:100px"></textarea>
+                                   <span class="zsum">0 / 200</span>
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>分说明：</dt>
+                               <dd>
+                                   <textarea class="text" placehEnder="填写分说明" id="picFRemarkEnd" style="height:150px"></textarea>
+                                   <span class="zsum">0 / 1000</span>
+                               </dd>
+                           </dl>
+                            <dl>
+                               <dt>图片地点：</dt>
+                               <dd>
+                                   <input type="text" id="picDdEnd" class="text" placehEnder="请输入图片地点">
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>摄影作者：</dt>
+                               <dd>
+                                   <input type="text" class="text" id="picSyzEnd" placehEnder="请输入摄影作者">
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>拍摄时间：</dt>
+                               <dd>
+                                   <input type="text" class="text" id="picSysjEnd" placehEnder="请输入拍摄时间">
+                                   <i class="ico ico61"></i>
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>图片分类：</dt>
+                               <dd class="clearfix"  id="contentUploadPicSortEnd">
+
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>图片是否公开：</dt>
+                               <dd>
+    		                        <select class="sct" id="picMjEnd">
+	                            <option selected=selected value='1'>公开</option>
+	                             <option value='0'>非公开</option>
+	                       		 </select>
+	                       		 <i class="ico ico60"></i>
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>布局类型：</dt>
+                               <dd>
+		                        <select class="sct" id="picTypeEnd">
+		                            <option selected=selected value='0'>横幅</option>
+		                            <option value='1'>竖幅</option>
+		                        </select>
+		                        <i class="ico ico60"></i>
+                               </dd>
+                           </dl>
+                           <dl>
+                               <dt>关键字：</dt>
+                               <dd>
+		                        <input type="text" class="text" placehEnder="请输入关键字" id="picGjzEnd">
+		                        <i class="ico ico62"></i>
+                               </dd>
+                           </dl>
+                       </div>
+                   </div>
+                   <div> 
+                   		<button class="btn saveBtn" onclick="saveModifyInfo()">保存</button>
+                   </div>
+			</div>
+			
+
+</div>
+ <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				<h3 id="myModalLabel"></h3>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer"></div>
+	</div>
+</body>
+</html>

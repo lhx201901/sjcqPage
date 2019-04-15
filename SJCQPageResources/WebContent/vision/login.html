@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+    <title>视觉重庆</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+    <link rel="stylesheet" href="project/css/base.css"/>
+    <link rel="stylesheet" href="project/css/style.css"/>
+    <!-- jquery -->
+    <script type="text/javascript" src="../plug/js/jquery-1.11.1.min.js"></script>
+    <!-- layer 弹出框 -->
+    <script type="text/javascript" src="../layer/layer.js"></script>
+</head>
+<body>
+    <div class="ui_mask"></div>
+    <div class="login_bx">
+        <p class="img"><img src="project/images/loginbg.png" width="360" height="500"></p>
+        <div class="loint" id="login_div">
+            <p class="logooin"><img src="project/images/logo.svg"></p>
+            <div class="lina mt40">
+                <input type="text" class="text" id="phone" placeholder="请输入手机号码">
+            </div>
+            <div class="lina mt40">
+                <input type="password" class="text" id="pass" placeholder="请输入密码">
+                <div class="wdts"><a href="javascript:void(0)" id="forgetPass">忘记密码？</a></div>
+            </div>
+            <div class="lina mt40">
+                    <input type="text" name="inputCode" class="text" id="w_pass2" placeholder="请输入验证码" style="width: 100px"/> 
+					<div style="width:140px;background-color: #ccc;height: 50px;text-align: center;margin-left: 180px;margin-top: -35px;font-size: 25px">
+						<span id="code" style="margin-right:0px;display: inline-block;margin-top: 4px;"></span>
+					</div>
+				    <a style="cursor:pointer;float: right;margin-top: -35px;color: black;" id="chanfe">看不清,换一张</a>
+            </div>
+            <div class="lobtn">
+                <button class="btn" onclick="login.login()">登录</button>
+            </div>
+        </div>
+        <div class="loint" id="forget_div" style="display:none">
+            <a href="javascript:void(0)" class="return" id="loginPass"><i class="ico ico41"></i>返回登录</a>
+            <p class="logooin">设置新密码</p>
+            <div class="lina mt20">
+                <input type="text" class="text" id="w_phone" placeholder="请输入手机号码">
+            </div>
+            <div class="lina mt20">
+                <input type="text" class="text" id="w_code" placeholder="请输入短信验证码">
+                <div class="wdts"><a href="javascript:void(0)" id="w_codeOn">获取验证码</a></div>
+            </div>
+            <div class="lina mt20">
+                <input type="password" class="text" id="w_pass" placeholder="请设置新密码（6位数以上组合密码）">
+            </div>
+            <div class="lina mt20">
+                <input type="password" class="text" id="w_pass3" placeholder="请再次输入新密码（6位数以上组合密码）">
+            </div>
+            <div class="lobtn2">
+                <button class="btn" onclick="login.up()">设置新密码</button>
+            </div>
+        </div>
+    </div>
+    <!-- 倒计时等待 -->
+    <script type="text/javascript" src="util/js/codeWait.js"></script>
+    <!-- js 功能 -->
+    <script type="text/javascript" src="js/login.js"></script>
+    <!-- 顶部标题 功能 -->
+	<script type="text/javascript" src="js/html/index_nav.js"></script>
+    <script type="text/javascript" >
+        login.init();
+        document.getElementById("code").onclick = login.tmcode();
+        document.onkeydown=function(event){
+        	var e = event || window.event || arguments.callee.caller.arguments[0];
+        	if(e && e.keyCode==13){ // enter 键c
+        		login.login();
+        	}
+        };
+        $("#chanfe").click(function(){ 
+    		login.tmcode();
+    	});
+    </script>
+</body>
+</html>

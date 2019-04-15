@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>区县封面图片</title>
+<link href="../../../plug/css/bootstrap.min1.css" rel="stylesheet" type="text/css" />
+<link href="../../../plug/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+<link href="../../../plug/css/bootstrap-table.css" rel="stylesheet" type="text/css">
+<link href="../../html-css/main.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../../plug/js/jquery-1.11.1.min.js"> </script>
+<script type="text/javascript" src="../../../plug/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap.js"> </script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../../plug/js/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../plug/js/json2.js"></script>
+<script type="text/javascript" src="../../../plug/js/plug.js"></script>
+<script type="text/javascript" src="../../../plug/js/validator.js"></script>
+<!-- <script type="text/javascript" src="../../html-js/area/showAreaCover.js"> </script> -->
+<!-- 顶部标题 功能 -->
+<script type="text/javascript" src="../../../vision/js/html/index_nav.js"></script>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var PARAM = GetParamByRequest();
+		$("#cover").attr("src",index_nav.PICURI+"/"+PARAM.path);
+	});
+</script>
+<body>
+<div id="hotPic_content" class="pictureAudit_content">
+	<div style="text-align:center;">
+		<img alt="" src="" id="cover">
+	</div>		
+</div>
+
+</body>
+</html>
